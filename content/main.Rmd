@@ -1,0 +1,40 @@
+---
+title: "Reporte de datos de VICo"
+author: "Programa de Enfermedades Infecciosas Emergentes / CES-UVG"
+output: 
+  flexdashboard::flex_dashboard:
+    theme: cosmo
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+
+<!-- Tab with general content regarging the surveillance -->
+# Contenido general
+
+
+
+
+<!-- Tab with a summary of the respiratory syndrome surveillance -->
+# Resumen de síndrome respiratorio
+
+
+
+
+<!-- Tab with a summary of the diarrheal syndrome surveillance -->
+# Resumen de síndrome diarreico
+
+
+
+
+<!-- Tab with a summary of the febrile syndrome surveillance -->
+# Resumen de síndrome febril
+
+
+
+
+<!-- End of the main report page -->
