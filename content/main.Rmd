@@ -9,7 +9,24 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-library(flexdashboard)
+# Used packages
+library(package = flexdashboard)
+library(package = tidyr)
+library(package = dplyr)
+
+
+# Number tables and figures
+numbered <- local({
+  ref <- data_frame(type = character(0), count = integer(0))
+  function(type, title){
+    if(!type %in% ref$type) ref <<- rbind(
+      ref,
+      data_frame(type = type, count = 0)
+    )
+    ref$count[ref$type == type] <<- ref$count[ref$type == type] + 1
+    paste0("**", type, " ", ref$count[ref$type == type], ': ', title, ".**")
+  }
+})
 ```
 
 
