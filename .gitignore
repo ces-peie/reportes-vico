@@ -1,7 +1,7 @@
 ## Files matching these patterns are ignored by git and thus are not uploaded to the public repository
 
 # Data files should not be publicly available
-./data/
+data/*
 
 # Output files
 *.pdf
