@@ -11,8 +11,13 @@ output:
 ```{r setup, include=FALSE}
 # Used packages
 library(package = flexdashboard)
+library(package = lubridate)
 library(package = tidyr)
 library(package = dplyr)
+
+
+# Work from project root directory
+if(sub("^.*/", "", getwd()) != "static-reports") setwd("..")
 
 
 # Number tables and figures
@@ -27,6 +32,18 @@ numbered <- local({
     paste0("**", type, " ", ref$count[ref$type == type], ': ', title, ".**")
   }
 })
+
+# Get data
+source("./scripts/00_get-data.R")
+
+# Most recent Saturday
+last_saturday <- as.POSIXct(floor_date(Sys.Date(), unit = "week") - 1)
+
+# Last Sunday one year before most recent Saturday
+first_sunday <- as.POSIXct(floor_date(last_saturday - years(1), unit = "week"))
+
+# Active sites
+active_sites <- c("CS-NSR", "H-Cuilapa", "H-Xela")
 ```
 
 
@@ -95,6 +112,57 @@ En el Centro de Salud de Nueva Santa Rosa se incluye personas provenientes de es
 [febril](#resumen-de-sindrome-febril)                </br>**o**</br>                                                                                           </br>**o**</br>
 </span>                                              fiebre documentada ≥ 38ºC durante la consulta o durante las 24 horas siguientes al ingreso hospitalario   fiebre documentada ≥ 38ºC durante la consulta o durante las 24 horas siguientes al ingreso hospitalario
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+## Third row {data-height=300}
+
+
+### `r numbered("Tabla", "Alcance del esfuerzo de vigilancia")` </br>Total de pacientes tamizados por VICo, elegibles a cada síndrome y enrolados en el estudio por cada sitio activo </br> (datos del último año de vigilancia)
+
+
+
+```{r summarize-surveillance, results='asis'}
+tamizados <- local_db %>%
+  tbl("subject") %>%
+  collect(n = Inf) %>%
+  mutate_each(
+    funs(as.POSIXct(., origin = origin)),
+    PDAInsertDate, fechaHoraAdmision
+  ) %>%
+  filter(
+    SiteName %in% active_sites,
+    catchment == 1
+  ) %>%
+  left_join(collect(tbl(local_db, "eligibility"), n = Inf)) %>%
+  mutate_each(funs(. == 1), starts_with("elegible")) %>% 
+  mutate(
+    screened = TRUE,
+    enrolled = !is.na(SASubjectID) & pacienteInscritoVico == 1 &
+      (elegibleRespira | elegibleDiarrea | elegibleFebril),
+    NombreDepartamento = stringr::str_to_title(NombreDepartamento)
+  )
+
+tamizados %>%
+  filter(between(PDAInsertDate, first_sunday, last_saturday)) %>%
+  group_by(NombreDepartamento, SiteName) %>%
+  summarize_each(
+    funs(sum),
+    screened, enrolled, elegibleRespira, elegibleDiarrea, elegibleFebril
+  ) %>%
+  select(
+    Departamento = NombreDepartamento, Sitio = SiteName,
+    Tamizados = screened, Inscritos = enrolled,
+    "Síndrome respiratorio" = elegibleRespira,
+    "Síndrome diarreico" = elegibleDiarrea,
+    "Síndrome febril" = elegibleFebril
+  ) %>%
+  # Fix names to windows native encoding
+  setNames(enc2native(names(.))) %>%
+  arrange(desc(Tamizados)) %>%
+  pander::pandoc.table(split.tables = 120)
+```
 
 
 
