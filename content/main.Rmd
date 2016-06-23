@@ -34,6 +34,32 @@ y en julio del mismo año en centros y puestos.
 
 
 
+### **Población vigilada** (detalles en pestaña de [áreas de captación](#areas-de-captacion))
+
+**Quetzaltenango**
+En el Hospital Regional de Quetzaltenango se incluye a pacientes con enfermedad
+respiratoria provenientes de
+Quetzaltenango,
+Salcajá,
+Olintepeque,
+San Juan Ostuncalco,
+San Mateo,
+Concepción Chiquirichapa,
+Almolonga,
+Cantel,
+Zunil
+y La Esperanza
+
+
+**Santa Rosa**
+En el Hospital Regional de Cuilapa se incluye personas provenientes de Santa Rosa
+(población 350,000 en 2015).
+En el Centro de Salud de Nueva Santa Rosa se incluye personas provenientes de ese mismo municipio
+(población 38,000 en 2015).
+
+
+
+
 <!-- Tab with a summary of the respiratory syndrome surveillance -->
 # Resumen de síndrome respiratorio
 
@@ -48,6 +74,12 @@ y en julio del mismo año en centros y puestos.
 
 <!-- Tab with a summary of the febrile syndrome surveillance -->
 # Resumen de síndrome febril
+
+
+
+
+<!-- Tab with a detail of catchment areas -->
+# Áreas de captación
 
 
 
