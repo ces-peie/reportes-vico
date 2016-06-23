@@ -4,7 +4,7 @@ author: "Programa de Enfermedades Infecciosas Emergentes / CES-UVG"
 output: 
   flexdashboard::flex_dashboard:
     theme: cosmo
-    orientation: columns
+    orientation: rows
     vertical_layout: fill
 ---
 
@@ -13,8 +13,23 @@ library(flexdashboard)
 ```
 
 
+
+
 <!-- Tab with general content regarging the surveillance -->
 # Contenido general
+
+
+## First row {data-height=120}
+
+### **Información general del sistema de vigilancia** (detalles en pestaña de [detalles del proyecto](#detalles-del-proyecto))
+
+VICo es una colaboración entre UVG, MSPAS y los
+Centros para el Control y la Prevención de Enfermedades de Estados Unidos.
+Vigila enfermedad diarreica, respiratoria y febril en hospitales y
+centros asistenciales.
+La vigilancia comenzó en Santa Rosa en noviembre 2007,
+y en Quetzaltenango en febrero 2009 en el hospital
+y en julio del mismo año en centros y puestos.
 
 
 
@@ -33,6 +48,12 @@ library(flexdashboard)
 
 <!-- Tab with a summary of the febrile syndrome surveillance -->
 # Resumen de síndrome febril
+
+
+
+
+<!-- Tab with a detailed description of the project -->
+# Detalles del proyecto
 
 
 
