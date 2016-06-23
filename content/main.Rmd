@@ -4,17 +4,216 @@ author: "Programa de Enfermedades Infecciosas Emergentes / CES-UVG"
 output: 
   flexdashboard::flex_dashboard:
     theme: cosmo
-    orientation: columns
+    orientation: rows
     vertical_layout: fill
 ---
 
 ```{r setup, include=FALSE}
-library(flexdashboard)
+# Used packages
+library(package = flexdashboard)
+library(package = lubridate)
+library(package = ggplot2)
+library(package = tidyr)
+library(package = dplyr)
+
+
+# Work from project root directory
+if(sub("^.*/", "", getwd()) != "static-reports") setwd("..")
+
+
+# Number tables and figures
+numbered <- local({
+  ref <- data_frame(type = character(0), count = integer(0))
+  function(type, title){
+    if(!type %in% ref$type) ref <<- rbind(
+      ref,
+      data_frame(type = type, count = 0)
+    )
+    ref$count[ref$type == type] <<- ref$count[ref$type == type] + 1
+    paste0("**", type, " ", ref$count[ref$type == type], ': ', title, ".**")
+  }
+})
+
+# Get data
+source("./scripts/00_get-data.R")
+
+# Most recent Saturday
+last_saturday <- as.POSIXct(floor_date(today(), unit = "week") - 1)
+
+# Last Sunday one year before most recent Saturday
+first_sunday <- as.POSIXct(floor_date(last_saturday - years(1), unit = "week"))
+
+# Active sites
+active_sites <- c("CS-NSR", "H-Cuilapa", "H-Xela")
 ```
+
+
 
 
 <!-- Tab with general content regarging the surveillance -->
 # Contenido general
+
+
+## First row {data-height=120}
+
+### **Información general del sistema de vigilancia** (detalles en pestaña de [detalles del proyecto](#detalles-del-proyecto))
+
+VICo es una colaboración entre UVG, MSPAS y los
+Centros para el Control y la Prevención de Enfermedades de Estados Unidos.
+Vigila enfermedad diarreica, respiratoria y febril en hospitales y
+centros asistenciales.
+La vigilancia comenzó en Santa Rosa en noviembre 2007,
+y en Quetzaltenango en febrero 2009 en el hospital
+y en julio del mismo año en centros y puestos.
+
+
+
+
+### **Población vigilada** (detalles en pestaña de [áreas de captación](#areas-de-captacion))
+
+**Quetzaltenango**
+En el Hospital Regional de Quetzaltenango se incluye a pacientes con enfermedad
+respiratoria provenientes de
+Quetzaltenango,
+Salcajá,
+Olintepeque,
+San Juan Ostuncalco,
+San Mateo,
+Concepción Chiquirichapa,
+Almolonga,
+Cantel,
+Zunil
+y La Esperanza
+
+
+**Santa Rosa**
+En el Hospital Regional de Cuilapa se incluye personas provenientes de Santa Rosa
+(población 350,000 en 2015).
+En el Centro de Salud de Nueva Santa Rosa se incluye personas provenientes de ese mismo municipio
+(población 38,000 en 2015).
+
+
+## Second row
+
+
+### `r numbered("Tabla", "Definiciones de caso")` </br>Resumen de las definiciones de caso utilizadas para capturar casos en cada síndrome vigilado. </br>*Puede consultar las definiciones específicas en la pestaña de cada síndrome.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+         Síndrome                                     Hospitalizados                                                                                           Ambulatorios en clínica
+--------------------------------------------------  --------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------
+<span title="Clic para consultar detalles">          Al menos un signo o síntoma de enfermedad respiratoria y evidencia de infección aguda (todas las edades)  Fiebre documentada ≥ 38ºC con historial de tos o dolor de garganta durante los 14 días previos
+[respiratorio](#resumen-de-sindrome-respiratorio)    </br>**o**</br>
+*</span>                                             Signos de peligro en niños menores a 5 años
+
+<span title="Clic para consultar detalles">          Reporta 3 o más deposiciones no formadas o líquidas en un período de 24 horas durante los 14 días         Reporta 3 o más deposiciones no formadas o líquidas en un período de 24 horas durante los 14 días
+[diarreico](#resumen-de-sindrome-diarreico)          previos a la visita a la emergencia                                                                       previos a la visita a la clínica
+</span>
+
+<span title="Clic para consultar detalles">          Fiebre sin una causa aparente con inicio < 7 días antes, al presentarse para recibir atención médica,     Fiebre sin una causa aparente con inicio < 7 días antes, al presentarse para recibir atención médica,
+[febril](#resumen-de-sindrome-febril)                </br>**o**</br>                                                                                           </br>**o**</br>
+</span>                                              fiebre documentada ≥ 38ºC durante la consulta o durante las 24 horas siguientes al ingreso hospitalario   fiebre documentada ≥ 38ºC durante la consulta o durante las 24 horas siguientes al ingreso hospitalario
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+## Third row {data-height=300}
+
+
+### `r numbered("Tabla", "Alcance del esfuerzo de vigilancia")` </br>Total de pacientes tamizados por VICo, elegibles a cada síndrome y enrolados en el estudio por cada sitio activo </br> (datos del último año de vigilancia)
+
+
+
+```{r summarize-surveillance, results='asis'}
+tamizados <- local_db %>%
+  tbl("subject") %>%
+  collect(n = Inf) %>%
+  mutate_each(
+    funs(as.POSIXct(., origin = origin)),
+    PDAInsertDate, fechaHoraAdmision
+  ) %>%
+  filter(
+    SiteName %in% active_sites,
+    catchment == 1
+  ) %>%
+  left_join(collect(tbl(local_db, "eligibility"), n = Inf)) %>%
+  mutate_each(funs(. == 1), starts_with("elegible")) %>% 
+  mutate(
+    screened = TRUE,
+    enrolled = !is.na(SASubjectID) & pacienteInscritoVico == 1 &
+      (elegibleRespira | elegibleDiarrea | elegibleFebril),
+    NombreDepartamento = stringr::str_to_title(NombreDepartamento)
+  )
+
+tamizados %>%
+  filter(between(PDAInsertDate, first_sunday, last_saturday)) %>%
+  group_by(NombreDepartamento, SiteName) %>%
+  summarize_each(
+    funs(sum),
+    screened, enrolled, elegibleRespira, elegibleDiarrea, elegibleFebril
+  ) %>%
+  select(
+    Departamento = NombreDepartamento, Sitio = SiteName,
+    Tamizados = screened, Inscritos = enrolled,
+    "Síndrome respiratorio" = elegibleRespira,
+    "Síndrome diarreico" = elegibleDiarrea,
+    "Síndrome febril" = elegibleFebril
+  ) %>%
+  # Fix names to windows native encoding
+  setNames(enc2native(names(.))) %>%
+  arrange(desc(Tamizados)) %>%
+  pander::pandoc.table(split.tables = 120)
+```
+
+
+
+
+### `r numbered("Figura", "Tamizados y enrolados")` Serie temporal mostrando el total de personas tamizadas e inscritas a cada síndrome {id=general-tamizados-enrolados}
+
+```{r time_series, fig.width=10, fig.height=3, dpi=96}
+
+# Set start date for each site
+min_dates <- data_frame(
+  SiteName = c("CS-NSR", "H-Cuilapa", "H-Xela"),
+  min_date = ymd_hms(c("2007-11-01 00:00:00", "2007-11-01 00:00:00", "2009-02-01 00:00:00"))
+)
+
+# Prepare plot
+production_time_series <- tamizados %>%
+  left_join(min_dates) %>%
+  group_by(SiteName) %>%
+  filter(
+    between(PDAInsertDate, first(min_date), as.POSIXct(today()))
+  ) %>%
+  mutate(inicio_periodo = floor_date(PDAInsertDate, unit = "month")) %>%
+  group_by(NombreDepartamento, SiteName, inicio_periodo) %>%
+  summarize_each(
+    funs(sum),
+    screened, enrolled, elegibleRespira, elegibleDiarrea, elegibleFebril
+  ) %>%
+  select(
+    departamento = NombreDepartamento, sitio = SiteName, inicio_periodo,
+    # Tamizados = screened,
+    Inscritos = enrolled,
+    "Síndrome\nrespiratorio" = elegibleRespira,
+    "Síndrome\ndiarreico" = elegibleDiarrea,
+    "Síndrome\nfebril" = elegibleFebril
+  ) %>%
+  gather(key = tipo, value = n, -c(departamento, sitio, inicio_periodo)) %>%
+  ungroup %>%
+  ggplot(aes(x = inicio_periodo, y = n)) +
+  geom_line(aes(color = tipo)) +
+  labs(x = "Fecha", y = "Total en categoría", color = "Categoría") +
+  scale_color_brewer(palette = "Set1") +
+  facet_grid(sitio ~ .) +
+  theme_bw() +
+  theme(
+    legend.key.height = grid::unit(2, "lines")
+  )
+
+print(production_time_series)
+```
+
 
 
 
@@ -33,6 +232,18 @@ library(flexdashboard)
 
 <!-- Tab with a summary of the febrile syndrome surveillance -->
 # Resumen de síndrome febril
+
+
+
+
+<!-- Tab with a detail of catchment areas -->
+# Áreas de captación
+
+
+
+
+<!-- Tab with a detailed description of the project -->
+# Detalles del proyecto
 
 
 
