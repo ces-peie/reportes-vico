@@ -12,6 +12,7 @@ output:
 # Used packages
 library(package = flexdashboard)
 library(package = lubridate)
+library(package = ggplot2)
 library(package = tidyr)
 library(package = dplyr)
 
@@ -37,7 +38,7 @@ numbered <- local({
 source("./scripts/00_get-data.R")
 
 # Most recent Saturday
-last_saturday <- as.POSIXct(floor_date(Sys.Date(), unit = "week") - 1)
+last_saturday <- as.POSIXct(floor_date(today(), unit = "week") - 1)
 
 # Last Sunday one year before most recent Saturday
 first_sunday <- as.POSIXct(floor_date(last_saturday - years(1), unit = "week"))
@@ -163,6 +164,56 @@ tamizados %>%
   arrange(desc(Tamizados)) %>%
   pander::pandoc.table(split.tables = 120)
 ```
+
+
+
+
+### `r numbered("Figura", "Tamizados y enrolados")` Serie temporal mostrando el total de personas tamizadas e inscritas a cada síndrome {id=general-tamizados-enrolados}
+
+```{r time_series, fig.width=10, fig.height=3, dpi=96}
+
+# Set start date for each site
+min_dates <- data_frame(
+  SiteName = c("CS-NSR", "H-Cuilapa", "H-Xela"),
+  min_date = ymd_hms(c("2007-11-01 00:00:00", "2007-11-01 00:00:00", "2009-02-01 00:00:00"))
+)
+
+# Prepare plot
+production_time_series <- tamizados %>%
+  left_join(min_dates) %>%
+  group_by(SiteName) %>%
+  filter(
+    between(PDAInsertDate, first(min_date), as.POSIXct(today()))
+  ) %>%
+  mutate(inicio_periodo = floor_date(PDAInsertDate, unit = "month")) %>%
+  group_by(NombreDepartamento, SiteName, inicio_periodo) %>%
+  summarize_each(
+    funs(sum),
+    screened, enrolled, elegibleRespira, elegibleDiarrea, elegibleFebril
+  ) %>%
+  select(
+    departamento = NombreDepartamento, sitio = SiteName, inicio_periodo,
+    # Tamizados = screened,
+    Inscritos = enrolled,
+    "Síndrome\nrespiratorio" = elegibleRespira,
+    "Síndrome\ndiarreico" = elegibleDiarrea,
+    "Síndrome\nfebril" = elegibleFebril
+  ) %>%
+  gather(key = tipo, value = n, -c(departamento, sitio, inicio_periodo)) %>%
+  ungroup %>%
+  ggplot(aes(x = inicio_periodo, y = n)) +
+  geom_line(aes(color = tipo)) +
+  labs(x = "Fecha", y = "Total en categoría", color = "Categoría") +
+  scale_color_brewer(palette = "Set1") +
+  facet_grid(sitio ~ .) +
+  theme_bw() +
+  theme(
+    legend.key.height = grid::unit(2, "lines")
+  )
+
+print(production_time_series)
+```
+
 
 
 
