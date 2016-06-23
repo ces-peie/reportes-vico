@@ -58,6 +58,28 @@ En el Centro de Salud de Nueva Santa Rosa se incluye personas provenientes de es
 (población 38,000 en 2015).
 
 
+## Second row
+
+
+### `r numbered("Tabla", "Definiciones de caso")` </br>Resumen de las definiciones de caso utilizadas para capturar casos en cada síndrome vigilado. </br>*Puede consultar las definiciones específicas en la pestaña de cada síndrome.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+         Síndrome                                     Hospitalizados                                                                                           Ambulatorios en clínica
+--------------------------------------------------  --------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------
+<span title="Clic para consultar detalles">          Al menos un signo o síntoma de enfermedad respiratoria y evidencia de infección aguda (todas las edades)  Fiebre documentada ≥ 38ºC con historial de tos o dolor de garganta durante los 14 días previos
+[respiratorio](#resumen-de-sindrome-respiratorio)    </br>**o**</br>
+*</span>                                             Signos de peligro en niños menores a 5 años
+
+<span title="Clic para consultar detalles">          Reporta 3 o más deposiciones no formadas o líquidas en un período de 24 horas durante los 14 días         Reporta 3 o más deposiciones no formadas o líquidas en un período de 24 horas durante los 14 días
+[diarreico](#resumen-de-sindrome-diarreico)          previos a la visita a la emergencia                                                                       previos a la visita a la clínica
+</span>
+
+<span title="Clic para consultar detalles">          Fiebre sin una causa aparente con inicio < 7 días antes, al presentarse para recibir atención médica,     Fiebre sin una causa aparente con inicio < 7 días antes, al presentarse para recibir atención médica,
+[febril](#resumen-de-sindrome-febril)                </br>**o**</br>                                                                                           </br>**o**</br>
+</span>                                              fiebre documentada ≥ 38ºC durante la consulta o durante las 24 horas siguientes al ingreso hospitalario   fiebre documentada ≥ 38ºC durante la consulta o durante las 24 horas siguientes al ingreso hospitalario
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 <!-- Tab with a summary of the respiratory syndrome surveillance -->
