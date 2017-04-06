@@ -403,24 +403,4 @@ case_timeseries(
 ```
 
 
-
-
-# Curvas epidemiológicas
-
-## {.tabset}
-
-### Hospital
-
-```{r, fig.width=8, fig.height=15}
-plot_epidemic_curve_labeled(respi_min, show_site_type = "hospital")
-```
-
-
-### Clínicas
-
-```{r, fig.width=8, fig.height=15}
-plot_epidemic_curve_labeled(respi_min, show_site_type = "centro de salud")
-```
-
-
 <!-- End of the respi report page -->

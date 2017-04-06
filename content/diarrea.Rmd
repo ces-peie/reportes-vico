@@ -466,23 +466,4 @@ case_timeseries(
 ```
 
 
-
-
-# Curvas epidemiológicas
-
-## {.tabset}
-
-### Hospital
-
-```{r epidemic-curve-hospital, fig.width=12, fig.height=15}
-plot_epidemic_curve_labeled(diarrea_min, show_site_type = "hospital")
-```
-
-### Clínicas
-
-```{r epidemic-curve-clinic, fig.width=12, fig.height=15}
-plot_epidemic_curve_labeled(diarrea_min, show_site_type = "centro de salud")
-```
-
-
 <!-- End of the diarrea report page -->
