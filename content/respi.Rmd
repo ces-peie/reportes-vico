@@ -5,6 +5,8 @@ output:
     theme: cerulean
     orientation: rows
     vertical_layout: fill
+    self_contained: false
+    lib_dir: ../docs/lib
 ---
 
 ```{r setup, include=FALSE}
@@ -198,7 +200,7 @@ Actualmente no ha iniciado la vigilancia por parte de VICo de casos ambulatorios
 
 <h4>Corredores endémicos de casos detectados</h4>
 
-```{r corridor-parameters}
+```{r respi-corridor-parameters}
 ylim <- 40
 
 previous_years <- 7
@@ -218,7 +220,7 @@ la cantidad de casos detectados es mayor que en el 75% de los años anteriores.
 
 ### Hospital regional de </br> **Cuilapa**
 
-```{r, dev='png', fig.width=10}
+```{r respi-corridor-sr-hospital, dev='png', fig.width=10}
 endemic_corridor(
   respi_min, site = "H-Cuilapa", previous_years = previous_years, ylim = ylim
 )
@@ -227,7 +229,7 @@ endemic_corridor(
 
 ### Hospital regional de </br> **Quetzaltenango**
 
-```{r, fig.width=10}
+```{r respi-corridor-qu-hospital, fig.width=10}
 endemic_corridor(
   respi_min, site = "H-Xela", previous_years = previous_years, ylim = ylim
 )
@@ -236,7 +238,7 @@ endemic_corridor(
 
 ### Centro de salud en </br> **Nueva Santa Rosa**
 
-```{r, fig.width=10}
+```{r respi-corridor-sr-clinic, fig.width=10}
 endemic_corridor(
   respi_min, site = "CS-NSR", previous_years = previous_years, ylim = ylim
 )
@@ -248,7 +250,7 @@ endemic_corridor(
 Actualmente no ha iniciado la vigilancia por parte de VICo de casos ambulatorios en Quetzaltenango.
 
 
-```{r, fig.width=10}
+```{r respi-corridor-qu-clinic, fig.width=10}
 endemic_corridor(respi_min, site = "H-Xela", null = TRUE, ylim = ylim)
 ```
 
