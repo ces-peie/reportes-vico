@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Prepare updated reports
-git checkout feature/publish-html-reports docs
+git checkout feature/publish-html-reports
 Rscript scripts/render-site.R 
 git add docs/*.html
 git commit -m 'Update html reports'
@@ -12,8 +12,8 @@ git checkout feature/publish-html-reports docs/*
 mv docs/* .
 
 # Clean up
+git rm --cached docs/*
 rmdir docs
-git reset HEAD
 git add *.html
 
 # Commit
