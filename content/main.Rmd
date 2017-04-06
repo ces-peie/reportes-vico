@@ -5,6 +5,8 @@ output:
     theme: cosmo
     orientation: rows
     vertical_layout: fill
+    self_contained: false
+    lib_dir: ../docs/lib
 editor_options: 
   chunk_output_type: console
 ---
