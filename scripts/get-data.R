@@ -1,7 +1,7 @@
 #'-----------------------------------------------------------------------------*
 #' Get data for the reports
 #'-----------------------------------------------------------------------------*
-#' Get data used by the report form the VICo sql-server
+#' Get data used by the report from the VICo sql-server
 #' All data should be loaded each time the reports are generated, and once a 
 #' report has been completed the raw and processed datasets should be saved
 #' as a snapshot
@@ -13,9 +13,8 @@
 #'-----------------------------------------------------------------------------*
 
 # Load used Packages
-library(package = RODBC) # Connect to sql-server and download data
-library(package = tidyr) # Clean up data
-library(package = dplyr) # Manage data
+library(package = DBI) # Connect to sql-server and download data
+library(package = tidyverse) # tidy data
 
 
 # Define database to cache the data locally
@@ -23,7 +22,7 @@ vico_file <- "vico.sqlite"
 
 data_base_path <- paste(
   base = "./data/cache",
-  date = Sys.Date(),
+  date = last_friday,
   file = vico_file,
   sep = "_"
 )
@@ -31,6 +30,7 @@ data_base_path <- paste(
 
 # Define sources for data groups
 sources <- list(
+  sites = "Control.Sitios",
   subject = "Clinicos.Basica_Respira",
   eligibility = "Clinicos.Basica_Respira",
   respiratory = "Clinicos.Basica_Respira",
@@ -42,6 +42,12 @@ sources <- list(
 # All tables with subject data should contain the SubjectID variable so they can
 # be related
 variables <- list(
+  # Site information
+  sites = c(
+    "Departamento", "DeptoID", "Municipio",
+    "TipoSitio", "NombreShortName", "Nombre",
+    "Longitude", "Latitude", "Altitude"
+  ),
   # General subject information
   subject = c(
     "SubjectID", "SASubjectID", "pacienteInscritoVico", "actualAdmitido",
@@ -94,14 +100,10 @@ if(!file.exists(data_base_path)){
   
   
   # Connect to server
-  data_base <- odbcDriverConnect(
-    paste(
-      "Driver=SQL Server",
-      "Server=FSX-GT3",
-      "Database=ViCo",
-      "Trusted_Connection=Yes",
-      sep =";"
-    )
+  data_base <- dbConnect(
+    odbc::odbc(), "PEIEServer",
+    uid = scan("data/user", what = "character"),
+    pwd = scan("data/password", what = "character")
   )
   
   
@@ -119,7 +121,7 @@ if(!file.exists(data_base_path)){
     
     # Get data from server
     message("Querying view: ", source_table)
-    df <- sqlQuery(channel = data_base, query = query, stringsAsFactors = FALSE)
+    df <- dbGetQuery(conn = data_base, statement = query)
     
     # Save data to local sqlite database
     message("Creating table: ", source_group, "\n")
@@ -127,7 +129,7 @@ if(!file.exists(data_base_path)){
   }
   
   # Disconnect from database
-  odbcClose(data_base)
+  dbDisconnect(data_base)
   
   # Clean up environment
   rm(data_base, source_idx, source_table, source_group, query, df)
