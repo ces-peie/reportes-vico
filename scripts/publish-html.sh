@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Prepare updated reports
-git checkout feature/publish-html-reports
+git checkout develop
 Rscript scripts/render-site.R 
 git add docs/*.html
 git commit -m 'Update html reports'
 
 # Move changes to gh-pages branch
 git checkout gh-pages 
-git checkout feature/publish-html-reports docs/*
+git checkout develop docs/*
 mv docs/* .
 
 # Clean up
@@ -18,4 +18,10 @@ git add *.html
 
 # Commit
 git commit -m 'Update html reports'
+
+# Return to develop
+git checkout develop
+
+# Publish
+git push origin gh-pages
 
