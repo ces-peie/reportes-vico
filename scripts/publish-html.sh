@@ -3,8 +3,8 @@
 # Prepare updated reports
 git checkout develop
 Rscript scripts/render-site.R 
-git add docs/*.html
-git commit -m 'Update html reports'
+git add docs/*
+git commit -m 'Update html reports and dependencies'
 
 # Move changes to gh-pages branch
 git checkout gh-pages 
@@ -14,10 +14,10 @@ mv docs/* .
 # Clean up
 git rm --cached docs/*
 rmdir docs
-git add *.html
+git add *
 
 # Commit
-git commit -m 'Update html reports'
+git commit -m 'Update html reports and dependencies'
 
 # Return to develop
 git checkout develop
