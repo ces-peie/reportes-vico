@@ -31,6 +31,9 @@ places <- c("H-Cuilapa", "CS-NSR", "H-Xela")
 # Set snapshot file name
 snapshot_file <- paste0("data/", last_friday, "_febril.RData")
 
+# Function for standard querying
+source(file = "scripts/standard-input.R")
+
 # Get data from server
 if(!file.exists(snapshot_file)){
   # Load package for data access
@@ -44,12 +47,11 @@ if(!file.exists(snapshot_file)){
   )
   
   # Get data up to last Friday
-  all_febril <- dbGetQuery(
-    conn = data_base,
-    statement = paste0(
-      "SELECT * FROM Clinicos.Basica_Febril ",
-      "WHERE fechaHoraAdmision <= '", last_friday, "';"
-    )
+  all_febril <- query_vico(
+    data_base = data_base,
+    view = "Clinicos.Basica_Febril",
+    variables = all_vars,
+    max_date = last_friday
   )
   
   # Save snapshot
