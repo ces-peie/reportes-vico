@@ -46,14 +46,14 @@ if(!file.exists(snapshot_file)){
     pwd = scan("data/password", what = "character")
   )
   
-  # Get data up to last Friday
-  all_vars <- paste(
-    "SubjectID, SASubjectID, PDAInsertDate, fechaHoraAdmision, SiteName, SiteType",
-    "elegibleDiarrea, SiteDepartamento, epiYearAdmision",
-    "epiWeekAdmision, departamento, municipio, comunidad, censo_comunidad",
-    "edadAnios, edadMeses, edadDias, fechaDeNacimiento",
-    "campylobacter, shigella, EPEC, ETEC, rotavirus, RTqPCR_NV1, RTqPCR_NV2",
-    "ASTROVIRUS, SAPOVIRUS",
+  # Define variable names
+  all_vars <- c(
+    "SubjectID", "SASubjectID", "PDAInsertDate", "fechaHoraAdmision", "SiteName", "SiteType",
+    "elegibleDiarrea", "SiteDepartamento", "epiYearAdmision",
+    "epiWeekAdmision", "departamento", "municipio", "comunidad", "censo_comunidad",
+    "edadAnios", "edadMeses", "edadDias", "fechaDeNacimiento",
+    "campylobacter", "shigella", "EPEC", "ETEC", "rotavirus", "RTqPCR_NV1", "RTqPCR_NV2",
+    "ASTROVIRUS", "SAPOVIRUS",
     # Sample variables
     "muestraHecesColecta",
     "muestraHecesColectaTipo",
@@ -78,10 +78,10 @@ if(!file.exists(snapshot_file)){
     "recepcionMuestraPVA",
     "recepcionMuestraFormalina",
     "recepcionMuestraCongeladas",
-    "recepcionMuestraNorovirus",
-    sep = ", "
+    "recepcionMuestraNorovirus"
   )
   
+  # Get data up to last Friday
   all_diarrea <- query_vico(
     data_base = data_base,
     view = "Clinicos.Basica_Diarrea",

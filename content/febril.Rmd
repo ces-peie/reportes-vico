@@ -46,6 +46,17 @@ if(!file.exists(snapshot_file)){
     pwd = scan("data/password", what = "character")
   )
   
+  # Define variable names
+  all_vars <- dbGetQuery(
+    conn = data_base,
+    statement = paste(
+      "SELECT COLUMN_NAME",
+      "FROM INFORMATION_SCHEMA.COLUMNS",
+      "WHERE TABLE_SCHEMA = 'Clinicos' AND TABLE_NAME = 'Basica_Febril'"
+    )
+  ) %>%
+    magrittr::use_series(COLUMN_NAME)
+  
   # Get data up to last Friday
   all_febril <- query_vico(
     data_base = data_base,
