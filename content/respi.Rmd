@@ -47,14 +47,13 @@ if(!file.exists(snapshot_file)){
   )
   
   # Get data up to last Friday
-  all_vars <- paste(
-    "SubjectID, SASubjectID, PDAInsertDate, fechaHoraAdmision, SiteName, SiteType",
-    "elegibleRespira, SiteDepartamento, epiYearAdmision",
-    "epiWeekAdmision, departamento, municipio, comunidad, censo_comunidad",
-    "edadAnios, edadMeses, edadDias, fechaDeNacimiento, Binax_HizoPrueba",
-    "Binax_Resultado, viralPCR_Hizo, viralPCR_FluA, viralPCR_FluB",
-    "viralPCR_RSV, viralPCR_hMPV, muestraFroteOPColecta, muestraFroteNP",
-    sep = ", "
+  all_vars <- c(
+    "SubjectID", "SASubjectID", "PDAInsertDate", "fechaHoraAdmision", "SiteName", "SiteType",
+    "elegibleRespira", "SiteDepartamento", "epiYearAdmision",
+    "epiWeekAdmision", "departamento", "municipio", "comunidad", "censo_comunidad",
+    "edadAnios", "edadMeses", "edadDias", "fechaDeNacimiento", "Binax_HizoPrueba",
+    "Binax_Resultado", "viralPCR_Hizo", "viralPCR_FluA", "viralPCR_FluB",
+    "viralPCR_RSV", "viralPCR_hMPV", "muestraFroteOPColecta", "muestraFroteNP"
   )
   
   all_respi <- query_vico(
