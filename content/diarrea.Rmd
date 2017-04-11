@@ -46,7 +46,7 @@ if(!file.exists(snapshot_file)){
     pwd = scan("data/password", what = "character")
   )
   
-  # Get data up to last Friday
+  # Define variable names
   all_vars <- c(
     "SubjectID", "SASubjectID", "PDAInsertDate", "fechaHoraAdmision", "SiteName", "SiteType",
     "elegibleDiarrea", "SiteDepartamento", "epiYearAdmision",
@@ -81,6 +81,7 @@ if(!file.exists(snapshot_file)){
     "recepcionMuestraNorovirus"
   )
   
+  # Get data up to last Friday
   all_diarrea <- query_vico(
     data_base = data_base,
     view = "Clinicos.Basica_Diarrea",

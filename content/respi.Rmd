@@ -46,7 +46,7 @@ if(!file.exists(snapshot_file)){
     pwd = scan("data/password", what = "character")
   )
   
-  # Get data up to last Friday
+  # Define variable names
   all_vars <- c(
     "SubjectID", "SASubjectID", "PDAInsertDate", "fechaHoraAdmision", "SiteName", "SiteType",
     "elegibleRespira", "SiteDepartamento", "epiYearAdmision",
@@ -56,6 +56,7 @@ if(!file.exists(snapshot_file)){
     "viralPCR_RSV", "viralPCR_hMPV", "muestraFroteOPColecta", "muestraFroteNP"
   )
   
+  # Get data up to last Friday
   all_respi <- query_vico(
     data_base = data_base,
     view = "Clinicos.Basica_Respira",

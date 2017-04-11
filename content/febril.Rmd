@@ -46,7 +46,7 @@ if(!file.exists(snapshot_file)){
     pwd = scan("data/password", what = "character")
   )
   
-  # Get variable names
+  # Define variable names
   all_vars <- dbGetQuery(
     conn = data_base,
     statement = paste(
