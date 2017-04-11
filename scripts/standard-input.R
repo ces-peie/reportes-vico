@@ -25,6 +25,11 @@ query_vico <- function(data_base, view, variables, max_date){
       "WHERE PDAInsertDate <= '", max_date, "';"
     )
   )
+  
+  # Ensure complete names are used
+  .data <- set_names(.data, variables)
+    
+  return(.data)
 }
 
 
