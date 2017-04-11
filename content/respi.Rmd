@@ -31,6 +31,9 @@ places <- c("H-Cuilapa", "CS-NSR", "H-Xela")
 # Set snapshot file name
 snapshot_file <- paste0("data/", last_friday, "_respi.RData")
 
+# Function for standard querying
+source(file = "scripts/standard-input.R")
+
 # Get data from server
 if(!file.exists(snapshot_file)){
   # Load package for data access
@@ -54,14 +57,11 @@ if(!file.exists(snapshot_file)){
     sep = ", "
   )
   
-  all_respi <- dbGetQuery(
-    conn = data_base,
-    statement = paste(
-      "SELECT",
-      all_vars,
-      "FROM Clinicos.Basica_Respira",
-      "WHERE PDAInsertDate <= '", last_friday, "';"
-    )
+  all_respi <- query_vico(
+    data_base = data_base,
+    view = "Clinicos.Basica_Respira",
+    variables = all_vars,
+    max_date = last_friday
   )
   
   # Save snapshot
