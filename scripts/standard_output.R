@@ -20,7 +20,7 @@ site_table_named <- function(.data, site = "all", etiology_names, format = NULL)
   if(Sys.info()[["sysname"]] == "Linux") Sys.setlocale(locale = "es_GT.UTF8")
   
   # rlang evaluation
-  etiology_names <- splice(etiology_names)
+  etiology_names <- rlang::splice(etiology_names)
   
   # Check site
   if(!is.character(site)) stop("The site name must be a character element.")
@@ -380,7 +380,7 @@ plot_epidemic_curve <- function(
   interactive = TRUE, tooltip = "none", ...
 ){
   # rlang evaluation
-  etiology_names <- splice(etiology_names)
+  etiology_names <- rlang::splice(etiology_names)
   
   plot <- .data %>%
     mutate(
@@ -449,7 +449,7 @@ interactive_case_map <- function(
   base_tiles = "carto-light"
 ){
   # rlang evaluation
-  etiology_names <- splice(etiology_names)
+  etiology_names <- rlang::splice(etiology_names)
   
   # Set tile options
   tiles <- frame_data(
