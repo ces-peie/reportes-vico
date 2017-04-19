@@ -1,0 +1,238 @@
+---
+title: "Reporte de datos de VICo"
+output: 
+  flexdashboard::flex_dashboard:
+    theme: cosmo
+    orientation: rows
+    vertical_layout: fill
+    self_contained: false
+    lib_dir: ../docs/lib
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+# Used packages
+library(package = flexdashboard)
+library(package = lubridate)
+library(package = tidyverse)
+  
+
+# Work from project root directory
+# if(sub("^.*/", "", getwd()) != "static-reports") setwd("..")
+knitr::opts_knit$set(root.dir = "..")
+
+# Number tables and figures
+numbered <- local({
+  ref <- data_frame(type = character(0), count = integer(0))
+  function(type, title){
+    if(!type %in% ref$type) ref <<- rbind(
+      ref,
+      data_frame(type = type, count = 0)
+    )
+    ref$count[ref$type == type] <<- ref$count[ref$type == type] + 1
+    paste0("**", type, " ", ref$count[ref$type == type], ': ', title, ".**")
+  }
+})
+
+```
+
+
+
+```{r data, include=FALSE}
+
+# Most recent Saturday
+last_friday <- floor_date(today(), unit = "week") - days(2)
+
+# Last Sunday one year before most recent Saturday
+first_sunday <- floor_date(last_friday - years(1), unit = "week")
+
+# Active sites
+active_sites <- c("CS-NSR", "H-Cuilapa", "H-Xela")
+
+# Get data
+source("scripts/get-data.R")
+
+```
+
+
+
+
+<!-- Tab with general content regarging the surveillance -->
+# Contenido general
+
+<h1>Programa de Enfermedades Infecciosas Emergentes / CES-UVG</h1>
+Datos hasta `r last_friday`
+</br> 
+
+## First row {data-height=120}
+
+### **Información general del sistema de vigilancia** (detalles en pestaña de [detalles del proyecto](#detalles-del-proyecto))
+
+VICo es una colaboración entre UVG, MSPAS y los
+Centros para el Control y la Prevención de Enfermedades de Estados Unidos.
+Vigila enfermedad diarreica, respiratoria y febril en hospitales y
+centros asistenciales.
+La vigilancia comenzó en Santa Rosa en noviembre 2007,
+y en Quetzaltenango en febrero 2009 en el hospital
+y en julio del mismo año en centros y puestos.
+
+
+
+
+### **Población vigilada** (detalles en pestaña de [áreas de captación](#areas-de-captacion))
+
+**Quetzaltenango**
+En el Hospital Regional de Quetzaltenango se incluye a pacientes con enfermedad
+respiratoria provenientes de
+Quetzaltenango,
+Salcajá,
+Olintepeque,
+San Juan Ostuncalco,
+San Mateo,
+Concepción Chiquirichapa,
+Almolonga,
+Cantel,
+Zunil
+y La Esperanza
+
+
+**Santa Rosa**
+En el Hospital Regional de Cuilapa se incluye personas provenientes de Santa Rosa
+(población 350,000 en 2015).
+En el Centro de Salud de Nueva Santa Rosa se incluye personas provenientes de ese mismo municipio
+(población 38,000 en 2015).
+
+
+## Second row
+
+
+### `r numbered("Tabla", "Definiciones de caso")` </br>Resumen de las definiciones de caso utilizadas para capturar casos en cada síndrome vigilado. </br>*Puede consultar las definiciones específicas en la pestaña de cada síndrome.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+         Síndrome                                     Hospitalizados                                                                                           Ambulatorios en clínica
+--------------------------------------------------  --------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------
+<span title="Clic para consultar detalles">          Al menos un signo o síntoma de enfermedad respiratoria y evidencia de infección aguda (todas las edades)  Fiebre documentada ≥ 38ºC con historial de tos o dolor de garganta durante los 14 días previos
+[respiratorio](#sindrome-respiratorio)               </br>**o**</br>
+*</span>                                             Signos de peligro en niños menores a 5 años * (AIEPI)
+
+<span title="Clic para consultar detalles">          Reporta 3 o más deposiciones no formadas o líquidas en un período de 24 horas durante los 14 días        Reporta 3 o más deposiciones no formadas o líquidas en un período de 24 horas durante los 14 días
+[diarreico](#sindrome-diarreico)                     previos a la visita a la emergencia                                                                       previos a la visita a la clínica
+</span>
+
+<span title="Clic para consultar detalles">          Fiebre sin una causa aparente con inicio < 7 días antes, al presentarse para recibir atención médica,     Fiebre sin una causa aparente con inicio < 7 días antes, al presentarse para recibir atención médica,
+[febril](#sindrome-febril)                           </br>**o**</br>                                                                                           </br>**o**</br>
+</span>                                              fiebre documentada ≥ 38ºC durante la consulta o durante las 24 horas siguientes al ingreso hospitalario   fiebre documentada ≥ 38ºC durante la consulta
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+### `r numbered("Tabla", "Alcance del esfuerzo de vigilancia")` </br>Total de pacientes tamizados por VICo, elegibles a cada síndrome y enrolados en el estudio por cada sitio activo </br> (datos del último año de vigilancia, desde `r first_sunday` hasta `r as.Date(last_friday)`).
+
+
+
+```{r summarize-surveillance, results='asis'}
+uuid_to_char <- . %>%
+  as.character %>%
+  paste(collapse = "")
+
+tamizados <- local_db %>%
+  tbl("subject") %>%
+  collect(n = Inf) %>%
+  mutate_at(
+    vars(PDAInsertDate, fechaHoraAdmision),
+    funs(as.POSIXct(., origin = origin))
+  ) %>%
+  mutate(SubjectID = map_chr(SubjectID, uuid_to_char)) %>%
+  filter(
+    SiteName %in% active_sites,
+    catchment == 1
+  ) %>%
+  left_join(
+    mutate(
+      collect(tbl(local_db, "eligibility"), n = Inf),
+      SubjectID = map_chr(SubjectID, uuid_to_char)
+    )
+  ) %>%
+  mutate_at(
+    vars(starts_with("elegible")),
+    funs(. == 1)
+  ) %>% 
+  mutate(
+    screened = TRUE,
+    enrolled = !is.na(SASubjectID) & pacienteInscritoVico == 1 &
+      (elegibleRespira | elegibleDiarrea | elegibleFebril),
+    NombreDepartamento = stringr::str_to_title(NombreDepartamento)
+  ) %>%
+  mutate_at(
+    vars(contains("elegible")),
+    funs(. & enrolled)
+  )
+
+tamizados %>%
+  filter(between(as.Date(PDAInsertDate), first_sunday, last_friday)) %>%
+  group_by(NombreDepartamento, SiteName) %>%
+  summarize_at(
+    vars(screened, enrolled, elegibleRespira, elegibleDiarrea, elegibleFebril),
+    funs(sum)
+  ) %>%
+  ungroup %>%
+  mutate(
+      sitio = paste0(NombreDepartamento, " (", SiteName, ")"),
+      elegibleRespira = paste0(elegibleRespira, " (", round(elegibleRespira/enrolled*100), "%)"),
+      elegibleDiarrea = paste0(elegibleDiarrea, " (", round(elegibleDiarrea/enrolled*100), "%)"),
+      elegibleFebril = paste0(elegibleFebril, " (", round(elegibleFebril/enrolled*100), "%)"),
+      enrolled = paste0(enrolled, " (", round(enrolled/screened*100), "%)")
+  ) %>%
+  select(
+    sitio,
+    Tamizados = screened,
+    "Elegibles e inscritos" = enrolled,
+    "Síndrome respiratorio" = elegibleRespira,
+    "Síndrome diarreico" = elegibleDiarrea,
+    "Síndrome febril" = elegibleFebril
+  ) %>%
+  gather(key = "Grupo", value = n, -sitio, factor_key = TRUE) %>%
+  spread(key = sitio, value = n) %>%
+  pander::pandoc.table(split.tables = 120)
+```
+
+
+
+
+<!-- Tab with a summary of the respiratory syndrome surveillance -->
+# Síndrome respiratorio
+
+<iframe
+  src="respi.html"
+  style="width: 100%; height: 100%; border: 0px;"
+></iframe>
+
+
+
+
+<!-- Tab with a summary of the diarrheal syndrome surveillance -->
+# Síndrome diarreico
+
+<iframe
+  src="diarrea.html"
+  style="width: 100%; height: 100%; border: 0px;"
+></iframe>
+
+
+
+
+<!-- Tab with a summary of the febrile syndrome surveillance -->
+# Síndrome febril
+
+<iframe
+  src="febril.html"
+  style="width: 100%; height: 100%; border: 0px;"
+></iframe>
+
+
+
+
+
+<!-- End of the main report page -->

@@ -1,0 +1,471 @@
+---
+title: "Síndrome diarreico"
+output:
+  flexdashboard::flex_dashboard:
+    theme: cerulean
+    orientation: rows
+    vertical_layout: fill
+    self_contained: false
+    lib_dir: ../docs/lib
+---
+
+```{r setup, include=FALSE}
+# Used packages
+library(package = flexdashboard)
+library(package = lubridate)
+library(package = tidyverse)
+
+knitr::opts_knit$set(root.dir = "..")
+```
+
+
+```{r get_data, include=FALSE}
+# Set reference dates
+last_friday <- floor_date(today(), unit = "week") - days(2)
+this_month_start <- floor_date(last_friday, unit = "month")
+last_month_start <- this_month_start - months(1)
+
+# Pick sites
+places <- c("H-Cuilapa", "CS-NSR", "H-Xela")
+
+# Set snapshot file name
+snapshot_file <- paste0("data/", last_friday, "_diarrea.RData")
+
+# Function for standard querying
+source(file = "scripts/standard-input.R")
+
+# Get data from server
+if(!file.exists(snapshot_file)){
+  # Load package for data access
+  library(package = DBI)
+  
+  # Connect to server
+  data_base <- dbConnect(
+    odbc::odbc(), "PEIEServer",
+    uid = scan("data/user", what = "character"),
+    pwd = scan("data/password", what = "character")
+  )
+  
+  # Define variable names
+  all_vars <- c(
+    "SubjectID", "SASubjectID", "PDAInsertDate", "fechaHoraAdmision", "SiteName", "SiteType",
+    "elegibleDiarrea", "SiteDepartamento", "epiYearAdmision",
+    "epiWeekAdmision", "departamento", "municipio", "comunidad", "censo_comunidad",
+    "edadAnios", "edadMeses", "edadDias", "fechaDeNacimiento",
+    "campylobacter", "shigella", "EPEC", "ETEC", "rotavirus", "RTqPCR_NV1", "RTqPCR_NV2",
+    "ASTROVIRUS", "SAPOVIRUS",
+    # Sample variables
+    "muestraHecesColecta",
+    "muestraHecesColectaTipo",
+    "MuestraHecesNoRazon",
+    "MuestraHecesNoRazonOtra_esp",
+    "muestraHecesHisopoSecoNoRazon",
+    "muestraHecesHisopoSecoNoRazonOtra_esp",
+    "muestraHecesHisopoSecoFechaHora",
+    "muestraHecesHisopoCaryBlairColecta",
+    "muestraHecesHisopoCaryBlairNoRazon",
+    "muestraHecesHisopoCaryBlairNoRazonOtra_esp",
+    "muestraHecesHisopoCaryBlairFechaHora",
+    "muestraHecesHisopoCaryBlairTipo",
+    "muestraHecesEnteraColecta",
+    "muestraHecesEnteraNoRazon",
+    "muestraHecesEnteraNoRazonOtra_Esp",
+    "muestraHecesEnteraFechaHora",
+    "muestraHecesEnteraLiquida",
+    "muestraHecesEnteraCubreFondo",
+    "recepcionMuestraOriginal",
+    "recepcionMuestraHisopo",
+    "recepcionMuestraPVA",
+    "recepcionMuestraFormalina",
+    "recepcionMuestraCongeladas",
+    "recepcionMuestraNorovirus"
+  )
+  
+  # Get data up to last Friday
+  all_diarrea <- query_vico(
+    data_base = data_base,
+    view = "Clinicos.Basica_Diarrea",
+    variables = all_vars,
+    max_date = last_friday
+  )
+  
+  # Save snapshot
+  save(all_diarrea, file = snapshot_file)
+} else {
+  load(snapshot_file)
+}
+
+# Load locations data
+source(file = "scripts/geo_data.R")
+```
+
+
+
+```{r define_functions, include=FALSE}
+# Get output functions
+source(file = "scripts/standard_output.R")
+
+# Define reported etiologies
+etiologies <- list(
+  rota = "Rotavirus",
+  noro1 = "Norovirus 1",
+  noro2 = "Norovirus 2",
+  astro = "Astrovirus",
+  sapo = "Sapovirus",
+  campy = "Campylobacter",
+  shig = "Shigella",
+  epec = "E. coli enteropatógena",
+  etec = "E. coli enterotóxica"
+)
+
+# Default labels for report
+site_table <- function(
+  # Default
+  .data,
+  site = "all",
+  # Etiologies
+  etiology_names = c(
+    etiologies,
+    list(
+      none = "Sin etiología determinada",
+      not_tested = "Pruebas pendientes**"
+    )
+  ),
+  ...
+){
+  site_table_named(.data, site, etiology_names, ...)
+}
+
+# Default labels for epidemic curves
+plot_epidemic_curve_labeled <- function(
+  .data, show_site_type,
+  etiology_names = etiologies,
+  ...
+){
+  plot_epidemic_curve(.data, show_site_type, etiology_names, ...)
+}
+```
+
+
+
+```{r prepare_data}
+
+diarrea_min <- all_diarrea %>%
+  # Assign etiologies. NA does not apply, TRUE is positive, FALSE is negative
+  minimal_dataset_etiologies(
+    # Condition
+    condition = elegibleDiarrea == 1, 
+    # Define etiology
+    campy = ifelse(
+      test = !is.na(campylobacter),
+      yes = campylobacter == 1,
+      no = NA
+    ),
+    shig = ifelse(
+      test = !is.na(shigella),
+      yes = shigella == 1,
+      no = NA
+    ),
+    epec = ifelse(
+      test = !is.na(EPEC) | !is.na(ETEC),
+      yes = EPEC == 1,
+      no = NA
+    ),
+    etec = ifelse(
+      test = !is.na(EPEC) | !is.na(ETEC),
+      yes = ETEC == 1,
+      no = NA
+    ),
+    rota = ifelse(
+      test = !is.na(rotavirus),
+      yes = rotavirus == 1,
+      no = NA
+    ),
+    noro1 = ifelse(
+      test = !is.na(RTqPCR_NV1),
+      yes = RTqPCR_NV1 == 1,
+      no = NA
+    ),
+    noro2 = ifelse(
+      test = !is.na(RTqPCR_NV2),
+      yes = RTqPCR_NV2 == 1,
+      no = NA
+    ),
+    astro = ifelse(
+      test = !is.na(ASTROVIRUS),
+      yes = ASTROVIRUS == 1,
+      no = NA
+    ),
+    sapo = ifelse(
+      test = !is.na(SAPOVIRUS),
+      yes = SAPOVIRUS == 1,
+      no = NA
+    ),
+    none = (!campy & !is.na(campy)) &
+      (!shig & !is.na(shig)) &
+      (!epec & !is.na(epec)) &
+      (!etec & !is.na(etec)) &
+      (!rota & !is.na(rota)) &
+      (!noro1 & !is.na(noro1)) &
+      (!noro2 & !is.na(noro2)) &
+      (!sapo & !is.na(sapo)) &
+      (!astro & !is.na(astro)),
+    not_tested = (is.na(campy) &
+      is.na(shig) &
+      is.na(epec) &
+      is.na(etec) &
+      is.na(rota) &
+      is.na(noro1) &
+      is.na(noro2) &
+      is.na(sapo) &
+      is.na(astro))
+  )
+
+```
+
+
+# Resumen {data-orientation=columns}
+
+## columna 1: Tablas de etiología {.tabset}
+
+<h4>Tablas de etiologías detectadas</h4>
+
+Patógenos detectados por los laboratorios, según sitio que detectó el caso.
+
+- NA: No aplica, o información no disponible.
+- \*\*: Número de pacientes para los que se tomó muestras pero no se han procesado.
+
+
+### Hospital regional de </br> **Cuilapa**
+
+```{r, results='asis'}
+site_table(diarrea_min, site = "H-Cuilapa")
+```
+
+
+### Hospital regional de </br> **Quetzaltenango**
+
+```{r, results='asis'}
+site_table(diarrea_min, site = "H-Xela")
+```
+
+
+### Centro de salud en </br> **Nueva Santa Rosa**
+
+```{r, results='asis'}
+site_table(diarrea_min, site = "CS-NSR")
+```
+
+
+### Centro de salud en </br> **San Martín Sacatepéquez**
+
+Actualmente no ha iniciado la vigilancia por parte de VICo de casos ambulatorios en Quetzaltenango.
+
+
+
+
+## columna 2: corredores endémicos {.tabset}
+
+<h4>Corredores endémicos de casos detectados</h4>
+
+```{r enteric-corridor-parameters}
+ylim <- 32
+
+previous_years <- 7
+```
+
+Corredores endémicos para comparar comportamiento del año actual (línea negra sólida)
+con el comportamiento de los `r previous_years - 1` años anteriores
+(`r paste(year(last_friday) - previous_years, year(last_friday) - 1, sep = " a ")`).
+Las líneas punteadas definen el intervalo de mínimo a máximo semanal de los años anteriores.
+Cuando la línea negra se encuentra:
+
+- Dentro del área roja, 
+la cantidad de casos detectados es mayor en esas semanas que en la mitad de
+las semanas correspondientes en los años anteriores.
+- Dentro del área gris o más arriba,
+la cantidad de casos detectados es mayor que en el 75% de los años anteriores.
+
+### Hospital regional de </br> **Cuilapa**
+
+```{r enteric-corridor-sr-hospital, dev='png', fig.width=10}
+endemic_corridor(
+  diarrea_min, site = "H-Cuilapa", previous_years = previous_years, ylim = ylim
+)
+```
+
+
+### Hospital regional de </br> **Quetzaltenango**
+
+```{r enteric-corridor-qu-hospital, fig.width=10}
+endemic_corridor(
+  diarrea_min, site = "H-Xela", previous_years = previous_years, ylim = ylim
+)
+```
+
+
+### Centro de salud en </br> **Nueva Santa Rosa**
+
+```{r enteric-corridor-sr-clinic, fig.width=10}
+endemic_corridor(
+  diarrea_min, site = "CS-NSR", previous_years = previous_years, ylim = ylim
+)
+```
+
+
+### Centro de salud en </br> **San Martín Sacatepéquez**
+
+Actualmente no ha iniciado la vigilancia por parte de VICo de casos ambulatorios en Quetzaltenango.
+
+
+```{r enteric-corridor-qu-clinic, fig.width=10}
+endemic_corridor(diarrea_min, site = "H-Xela", null = TRUE, ylim = ylim)
+```
+
+
+
+
+
+# Mapas de casos recientes
+
+```{r}
+# Set range for recent cases
+n_months <- 3
+```
+
+
+<h4>Mapas de casos con etiología detectada</h4>
+
+Los mapas muestran un punto por cada caso en las comunidades de origen de los pacientes,
+para cada departamento donde se realiza vigilancia,
+que fueron detectados durante los últimos `r n_months` meses
+(`r paste(as.Date(last_friday - months(n_months)), as.Date(last_friday), sep = " a ")`).
+
+
+## 
+
+### Santa Rosa
+
+```{r}
+interactive_case_map(
+  .data = diarrea_min, department = "Santa Rosa",
+  n_months = n_months, etiology_names = etiologies
+)
+```
+
+
+### Quetzaltenango
+
+```{r}
+interactive_case_map(
+  .data = diarrea_min, department = "Quetzaltenango",
+  n_months = n_months, etiology_names = etiologies
+)
+```
+
+
+
+
+# Series de tiempo {data-orientation=columns}
+
+```{r timeseries-limit}
+time_ylim <- case_timeseries(diarrea_min, count_all = TRUE) + 1
+```
+
+
+## Hospital
+
+### Hospital: Rotavirus
+
+```{r}
+case_timeseries(
+  diarrea_min, sites = "hospital",
+  etiology_name = "rota", group = "diarrea",
+  ylim = time_ylim
+)
+```
+
+
+### Hospital: Norovirus 2
+
+```{r}
+case_timeseries(
+  diarrea_min, sites = "hospital",
+  etiology_name = "noro2", group = "diarrea",
+  ylim = time_ylim
+)
+```
+
+
+### Hospital: _E. coli_ enterotóxica
+
+```{r}
+case_timeseries(
+  diarrea_min, sites = "hospital",
+  etiology_name = "etec", group = "diarrea",
+  ylim = time_ylim
+)
+```
+
+
+### Hospital: _E. coli_ enteropatógena
+
+```{r}
+case_timeseries(
+  diarrea_min, sites = "hospital",
+  etiology_name = "epec", group = "diarrea",
+  ylim = time_ylim
+)
+```
+
+
+
+## Centro de salud
+
+### Centro de salud: Rotavirus
+
+```{r}
+case_timeseries(
+  diarrea_min, sites = "centro de salud",
+  etiology_name = "rota", group = "diarrea",
+  ylim = time_ylim
+)
+```
+
+
+### Centro de salud: Norovirus 2
+
+```{r}
+case_timeseries(
+  diarrea_min, sites = "centro de salud",
+  etiology_name = "noro2", group = "diarrea",
+  ylim = time_ylim
+)
+```
+
+
+### Centro de salud: _E. coli_ enterotóxica
+
+```{r}
+case_timeseries(
+  diarrea_min, sites = "centro de salud",
+  etiology_name = "etec", group = "diarrea",
+  ylim = time_ylim
+)
+```
+
+
+
+### Centro de salud: _E. coli_ enteropatógena
+
+```{r}
+
+case_timeseries(
+  diarrea_min, sites = "centro de salud",
+  etiology_name = "epec", group = "diarrea",
+  ylim = time_ylim
+)
+```
+
+
+<!-- End of the diarrea report page -->
