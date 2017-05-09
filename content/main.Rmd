@@ -195,7 +195,7 @@ tamizados %>%
   ) %>%
   gather(key = "Grupo", value = n, -sitio, factor_key = TRUE) %>%
   spread(key = sitio, value = n) %>%
-  pander::pandoc.table(split.tables = 120)
+  knitr::kable()
 ```
 
 

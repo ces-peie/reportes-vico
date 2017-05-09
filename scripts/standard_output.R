@@ -66,7 +66,8 @@ site_table_named <- function(.data, site = "all", etiology_names, format = NULL)
     ) %>%
     filter(value) %>% select(-value) %>%
     gather(
-      key = etiology, value = result, na.rm = TRUE, -c(unique_id:group)
+      key = etiology, value = result, na.rm = TRUE,
+      -c(unique_id:site_department, group)
     ) %>%
     group_by(
       group, etiology
@@ -126,7 +127,7 @@ site_table_named <- function(.data, site = "all", etiology_names, format = NULL)
 
 endemic_corridor <- function(
   .data, site = "all", etiologies = "all", previous_years = 7,
-  null = FALSE, ylim = 100, interactive = TRUE
+  null = FALSE, ylim = 100, interactive = FALSE
 ){
   
   # Check site
@@ -358,7 +359,7 @@ minimal_dataset_etiologies <- function(.data, condition, ...){
       site_type, site_name, site_department,
       subject_department, subject_municipality, subject_community,
       age_years, age_months, age_days, age_aprox, age_dates,
-      include = names(dots)
+      one_of(names(dots))
     ) %>%
     arrange(
       site_type, site_department, service_date
@@ -494,7 +495,7 @@ interactive_case_map <- function(
       department_name, subject_department, subject_community, community_code,
       service_date,
       # Etiologies
-      include = names(etiology_names)
+      one_of(names(etiology_names))
     ) %>%
     gather(key = etiology, value = result, one_of(names(etiology_names))) %>%
     filter(result) %>%
@@ -652,7 +653,7 @@ case_timeseries <- function(
   if(!count_all){
     cases <- .data %>%
       filter(site_type == sites) %>%
-      select(site_name, service_date, include = etiology_name) %>%
+      select(site_name, service_date, one_of(etiology_name)) %>%
       group_by(site_name, service_date) %>%
       summarize_all(
         funs(sum(., na.rm = TRUE))
@@ -665,7 +666,7 @@ case_timeseries <- function(
       as.data.frame()
   } else {
     max_cases <- .data %>%
-      select(site_type, site_name, service_date, include = names(etiologies)) %>%
+      select(site_type, site_name, service_date, one_of(names(etiologies))) %>%
       group_by(site_type, site_name, service_date) %>%
       summarize_all(
         funs(sum(., na.rm = TRUE))
