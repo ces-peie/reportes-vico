@@ -9,7 +9,7 @@ git commit -m 'Update html reports and dependencies'
 # Move changes to gh-pages branch
 git checkout gh-pages 
 git checkout develop docs/*
-cp -r docs/* . && rm -R docs/* && rmdir docs
+cp -r docs/. . && rm -R docs/* && rmdir docs
 
 # Clean up
 git rm --cached docs/*
