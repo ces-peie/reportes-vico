@@ -48,7 +48,7 @@ last_friday <- floor_date(today(), unit = "week") - days(2)
 first_sunday <- floor_date(last_friday - years(1), unit = "week")
 
 # Active sites
-active_sites <- c("CS-NSR", "H-Cuilapa", "H-Xela")
+active_sites <- c("CS-NSR", "H-Cuilapa", "H-Xela", "CS-SM")
 
 # Get data
 source("scripts/get-data.R")
@@ -94,8 +94,9 @@ Concepción Chiquirichapa,
 Almolonga,
 Cantel,
 Zunil
-y La Esperanza
-
+y La Esperanza (población 415,000 en 2015).
+En el Centro de Salud de San Martín Sacatepéquez se incluye personas provenientes
+de ese mismo municipio (población 28,000 en 2015)
 
 **Santa Rosa**
 En el Hospital Regional de Cuilapa se incluye personas provenientes de Santa Rosa
@@ -147,7 +148,10 @@ tamizados <- local_db %>%
   mutate(SubjectID = map_chr(SubjectID, uuid_to_char)) %>%
   filter(
     SiteName %in% active_sites,
-    catchment == 1
+    catchment == 1 | (
+      # Temporal soft catchment definition for CS-SM
+      SiteName == "CS-SM" & NombreMunicipio == "SAN MARTIN SACATEPEQUEZ"
+    )
   ) %>%
   left_join(
     mutate(
@@ -195,7 +199,7 @@ tamizados %>%
   ) %>%
   gather(key = "Grupo", value = n, -sitio, factor_key = TRUE) %>%
   spread(key = sitio, value = n) %>%
-  pander::pandoc.table(split.tables = 120)
+  knitr::kable()
 ```
 
 
