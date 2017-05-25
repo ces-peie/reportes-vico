@@ -26,7 +26,7 @@ this_month_start <- floor_date(last_friday, unit = "month")
 last_month_start <- this_month_start - months(1)
 
 # Pick sites
-places <- c("H-Cuilapa", "CS-NSR", "H-Xela")
+places <- c("H-Cuilapa", "CS-NSR", "H-Xela", "CS-SM")
 
 # Set snapshot file name
 snapshot_file <- paste0("data/", last_friday, "_respi.RData")
@@ -191,7 +191,9 @@ site_table(respi_min, site = "CS-NSR")
 
 ### Centro de salud en </br> **San Martín Sacatepéquez**
 
-Actualmente no ha iniciado la vigilancia por parte de VICo de casos ambulatorios en Quetzaltenango.
+```{r, results='asis'}
+site_table(respi_min, site = "CS-SM")
+```
 
 
 
@@ -247,11 +249,10 @@ endemic_corridor(
 
 ### Centro de salud en </br> **San Martín Sacatepéquez**
 
-Actualmente no ha iniciado la vigilancia por parte de VICo de casos ambulatorios en Quetzaltenango.
-
-
 ```{r respi-corridor-qu-clinic, fig.width=10}
-endemic_corridor(respi_min, site = "H-Xela", null = TRUE, ylim = ylim)
+endemic_corridor(
+  respi_min, site = "CS-SM", previous_years = previous_years, ylim = ylim
+)
 ```
 
 

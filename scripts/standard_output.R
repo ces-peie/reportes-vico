@@ -29,11 +29,12 @@ site_table_named <- function(.data, site = "all", etiology_names, format = NULL)
   if(!all(site == "all")){
     if(!all(site %in% .data$site_name)){
       not_found <- site[!site %in% .data$site_name]
-      stop(
+      warning(
         "The site name \"",
         paste(not_found, collapse = "\", \""),
         "\" was not found in the dataset. ",
-        "Try one of: ", paste(unique(.data$site_name), collapse = ", ")
+        "Try one of: ", paste(unique(.data$site_name), collapse = ", "),
+        "\nReturning 0 rows tibble."
       )
     }
     
@@ -77,13 +78,18 @@ site_table_named <- function(.data, site = "all", etiology_names, format = NULL)
       n_positive = sum(result),
       percent_positive = round(mean(result) * 100)
     ) %>%
+    ungroup %>%
+    complete(
+      group = c("this_month", "last_month", "all_time"),
+      etiology = names(etiology_names),
+      fill = list(n_tested = 0, n_positive = 0, percent_positive = 0)
+    ) %>%
     mutate(
       value = paste0(
         n_positive, " / ", n_tested,
         " <font color='#C5C5C5'>(", percent_positive, ")</font>"
       )
     ) %>%
-    ungroup %>%
     select(-c(n_tested:percent_positive)) %>%
     mutate(
       group = recode_factor(
@@ -137,11 +143,12 @@ endemic_corridor <- function(
   if(!all(site == "all")){
     if(!all(site %in% .data$site_name)){
       not_found <- site[!site %in% .data$site_name]
-      stop(
-        "The site names \"",
+      warning(
+        "The site name \"",
         paste(not_found, collapse = "\", \""),
         "\" was not found in the dataset. ",
-        "Try one of: ", paste(unique(.data$site_name), collapse = ", ")
+        "Try one of: ", paste(unique(.data$site_name), collapse = ", "),
+        "Returning 0 rows tibble."
       )
     }
     
