@@ -149,7 +149,10 @@ tamizados <- local_db %>%
   mutate(SubjectID = map_chr(SubjectID, uuid_to_char)) %>%
   filter(
     SiteName %in% active_sites,
-    catchment == 1
+    catchment == 1 | (
+      # Temporal soft catchment definition for CS-SM
+      SiteName == "CS-SM" & NombreMunicipio == "SAN MARTIN SACATEPEQUEZ"
+    )
   ) %>%
   left_join(
     mutate(
