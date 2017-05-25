@@ -48,7 +48,7 @@ last_friday <- floor_date(today(), unit = "week") - days(2)
 first_sunday <- floor_date(last_friday - years(1), unit = "week")
 
 # Active sites
-active_sites <- c("CS-NSR", "H-Cuilapa", "H-Xela")
+active_sites <- c("CS-NSR", "H-Cuilapa", "H-Xela", "CS-SM")
 
 # Get data
 source("scripts/get-data.R")
