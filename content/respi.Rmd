@@ -163,6 +163,8 @@ respi_min <- all_respi %>%
 
 Patógenos detectados por los laboratorios, según sitio que detectó el caso.
 
+**Muestras no analizadas desde 2017-09-11 hasta 2017-09-22 debido a actividades extraordinarias en el laboratorio. Se actualizará los resultados el 2017-10-03.**
+
 - NA: No aplica, o información no disponible.
 - \*: Prueba BINAX realizada únicamente en el hospital, en pacientes con 18 o más años de edad.
 - \*\*: Número de pacientes para los que se tomó muestras pero no se han procesado.
