@@ -2554,7 +2554,8 @@ window.FlexDashboardComponents.push({
       var dataHref = valueOutput.attr('data-href');
       if (dataHref) {
         valueBox.addClass('linked-value');
-        valueBox.on('click', function(e) {
+        valueBox.off('click.value-box');
+        valueBox.on('click.value-box', function(e) {
           window.FlexDashboardUtils.showLinkedValue(dataHref);
         });
       }
@@ -2591,7 +2592,7 @@ window.FlexDashboardComponents.push({
 <h1>
 Programa de Enfermedades Infecciosas Emergentes / CES-UVG
 </h1>
-<p>Datos hasta 2017-11-17 </br></p>
+<p>Datos hasta 2017-12-08 </br></p>
 <div id="first-row" class="section level2" data-height="120">
 <h2>First row</h2>
 <div id="informacion-general-del-sistema-de-vigilancia-detalles-en-pestana-de-detalles-del-proyecto" class="section level3">
@@ -2640,8 +2641,8 @@ Programa de Enfermedades Infecciosas Emergentes / CES-UVG
 </tbody>
 </table>
 </div>
-<div id="tabla-2-alcance-del-esfuerzo-de-vigilancia.-total-de-pacientes-tamizados-por-vico-elegibles-a-cada-sindrome-y-enrolados-en-el-estudio-por-cada-sitio-activo-datos-del-ultimo-ano-de-vigilancia-desde-2016-11-13-hasta-2017-11-17." class="section level3">
-<h3><strong>Tabla 2: Alcance del esfuerzo de vigilancia.</strong> </br>Total de pacientes tamizados por VICo, elegibles a cada síndrome y enrolados en el estudio por cada sitio activo </br> (datos del último año de vigilancia, desde 2016-11-13 hasta 2017-11-17).</h3>
+<div id="tabla-2-alcance-del-esfuerzo-de-vigilancia.-total-de-pacientes-tamizados-por-vico-elegibles-a-cada-sindrome-y-enrolados-en-el-estudio-por-cada-sitio-activo-datos-del-ultimo-ano-de-vigilancia-desde-2016-12-04-hasta-2017-12-08." class="section level3">
+<h3><strong>Tabla 2: Alcance del esfuerzo de vigilancia.</strong> </br>Total de pacientes tamizados por VICo, elegibles a cada síndrome y enrolados en el estudio por cada sitio activo </br> (datos del último año de vigilancia, desde 2016-12-04 hasta 2017-12-08).</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
@@ -2658,38 +2659,38 @@ Programa de Enfermedades Infecciosas Emergentes / CES-UVG
 <tbody>
 <tr class="odd">
 <td align="left">Tamizados</td>
-<td align="left">714</td>
-<td align="left">2164</td>
-<td align="left">2703</td>
-<td align="left">932</td>
+<td align="left">754</td>
+<td align="left">2094</td>
+<td align="left">2662</td>
+<td align="left">924</td>
 </tr>
 <tr class="even">
 <td align="left">Elegibles e inscritos</td>
-<td align="left">152 (21%)</td>
-<td align="left">538 (25%)</td>
-<td align="left">381 (14%)</td>
-<td align="left">771 (83%)</td>
+<td align="left">171 (23%)</td>
+<td align="left">543 (26%)</td>
+<td align="left">454 (17%)</td>
+<td align="left">778 (84%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Síndrome respiratorio</td>
-<td align="left">63 (41%)</td>
-<td align="left">468 (87%)</td>
-<td align="left">169 (44%)</td>
-<td align="left">542 (70%)</td>
+<td align="left">67 (39%)</td>
+<td align="left">471 (87%)</td>
+<td align="left">210 (46%)</td>
+<td align="left">533 (69%)</td>
 </tr>
 <tr class="even">
 <td align="left">Síndrome diarreico</td>
-<td align="left">104 (68%)</td>
+<td align="left">119 (70%)</td>
 <td align="left">85 (16%)</td>
-<td align="left">209 (55%)</td>
-<td align="left">204 (26%)</td>
+<td align="left">241 (53%)</td>
+<td align="left">223 (29%)</td>
 </tr>
 <tr class="odd">
 <td align="left">Síndrome febril</td>
 <td align="left">0 (0%)</td>
 <td align="left">1 (0%)</td>
-<td align="left">17 (4%)</td>
-<td align="left">37 (5%)</td>
+<td align="left">20 (4%)</td>
+<td align="left">35 (4%)</td>
 </tr>
 </tbody>
 </table>
