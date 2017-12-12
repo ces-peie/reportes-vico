@@ -22,7 +22,7 @@ query_vico <- function(data_base, view, variables, max_date){
       "SELECT",
       paste(variables, collapse = ", "),
       "FROM", view,
-      "WHERE PDAInsertDate <= '", max_date, "';"
+      paste0("WHERE PDAInsertDate <= '", max_date, "';")
     )
   )
   
