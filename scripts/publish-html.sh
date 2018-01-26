@@ -2,6 +2,7 @@
 
 # Prepare updated reports
 git checkout develop
+rm -R docs/*
 Rscript scripts/render-site.R
 git add -f docs/.
 git commit -m 'Update html reports and dependencies'
