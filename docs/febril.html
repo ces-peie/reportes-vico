@@ -8,9 +8,9 @@
 
 
 
-<title>Reporte de datos de VICo</title>
+<title>Síndrome febril</title>
 
-<meta property="og:title" content="Reporte de datos de VICo" />
+<meta property="og:title" content="Síndrome febril" />
 
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
 
@@ -23,11 +23,18 @@ window.FlexDashboardComponents = [];
 
 <script src="lib/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="lib/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="lib/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="lib/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="lib/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="lib/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
+<script src="lib/htmlwidgets-1.0/htmlwidgets.js"></script>
+<link href="lib/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
+<script src="lib/dygraphs-1.1.1/dygraph-combined.js"></script>
+<script src="lib/moment-2.8.4/moment.js"></script>
+<script src="lib/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
+<script src="lib/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
+<script src="lib/dygraphs-binding-1.1.1.4/dygraphs.js"></script>
 <style type="text/css">
 
 /*
@@ -730,49 +737,17 @@ body {
 
 .section.sidebar {
   top: 51px;
-  background-color: rgba(39, 128, 227, 0.1);
-}
-
-.value-box {
-  color: #f9f9f9;
-}
-
-.bg-primary {
-  background-color: rgba(39, 128, 227, 0.7);
-}
-
-.storyboard-nav .sbframelist ul li.active {
-  background-color: rgba(39, 128, 227, 0.7);
+  background-color: rgba(3, 60, 115, 0.1);
 }
 
 .nav-tabs-custom > .nav-tabs > li.active {
-  border-top-color: rgba(39, 128, 227, 0.7);
+  border-top-color: #2fa4e7;
 }
 
-.bg-info {
-  background-color: rgba(153, 84, 187, 0.7);
+.storyboard-nav .sbframelist ul li.active {
+  background-color: rgba(47, 164, 231, 0.7);
 }
 
-.bg-warning {
-  background-color: rgba(255, 117, 24, 0.7);
-}
-
-.bg-danger {
-  background-color: rgba(255, 0, 57, 0.7);
-}
-
-.bg-success {
-  background-color: rgba(63, 182, 24, 0.7);
-}
-
-.chart-title {
-  font-weight: 500;
-}
-
-.nav-tabs-custom > .nav-tabs > li > a,
-.nav-tabs-custom > .nav-tabs > li > a:active {
-  font-weight: 500;
-}
 
 @media only screen and (min-width: 768px) {
 html, body {
@@ -805,7 +780,7 @@ html, body {
   
 </span>
 <span class="navbar-brand">
-  Reporte de datos de VICo
+  Síndrome febril
   <span class="navbar-author">
         </span>
 </span>
@@ -820,6 +795,10 @@ html, body {
 </div><!--/.container-->
 </div><!--/.navbar-->
 
+<img class="mobile-figure" data-mobile-figure-id=fig1 src="/home/odeleon/Desktop/vico/repositories/reports/docs/febril_files/figure-html4/febrile-corridor-sr-hospital-1.mb.png" />
+<img class="mobile-figure" data-mobile-figure-id=fig2 src="/home/odeleon/Desktop/vico/repositories/reports/docs/febril_files/figure-html4/febrile-corridor-qu-hospital-1.mb.png" />
+<img class="mobile-figure" data-mobile-figure-id=fig3 src="/home/odeleon/Desktop/vico/repositories/reports/docs/febril_files/figure-html4/febrile-corridor-sr-clinic-1.mb.png" />
+<img class="mobile-figure" data-mobile-figure-id=fig4 src="/home/odeleon/Desktop/vico/repositories/reports/docs/febril_files/figure-html4/febrile-corridor-qu-clinic-1.mb.png" />
 <script type="text/javascript">
 
 
@@ -2586,135 +2565,425 @@ window.FlexDashboardComponents.push({
 
 <div id="dashboard-container">
 
-<!-- Tab with general content regarging the surveillance -->
-<div id="contenido-general" class="section level1">
-<h1>Contenido general</h1>
-<h1>
-Programa de Enfermedades Infecciosas Emergentes / CES-UVG
-</h1>
-<p>Datos hasta 2018-01-26 </br></p>
-<div id="first-row" class="section level2" data-height="120">
-<h2>First row</h2>
-<div id="informacion-general-del-sistema-de-vigilancia-detalles-en-pestana-de-detalles-del-proyecto" class="section level3">
-<h3><strong>Información general del sistema de vigilancia</strong> (detalles en pestaña de <a href="#detalles-del-proyecto">detalles del proyecto</a>)</h3>
-<p>VICo es una colaboración entre UVG, MSPAS y los Centros para el Control y la Prevención de Enfermedades de Estados Unidos. Vigila enfermedad diarreica, respiratoria y febril en hospitales y centros asistenciales. La vigilancia comenzó en Santa Rosa en noviembre 2007, y en Quetzaltenango en febrero 2009 en el hospital y en julio del mismo año en centros y puestos.</p>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
 </div>
-<div id="poblacion-vigilada-detalles-en-pestana-de-areas-de-captacion" class="section level3">
-<h3><strong>Población vigilada</strong> (detalles en pestaña de <a href="#areas-de-captacion">áreas de captación</a>)</h3>
-<p><strong>Quetzaltenango</strong> En el Hospital Regional de Quetzaltenango se incluye a pacientes con enfermedad respiratoria provenientes de Quetzaltenango, Salcajá, Olintepeque, San Juan Ostuncalco, San Mateo, Concepción Chiquirichapa, Almolonga, Cantel, Zunil y La Esperanza (población 415,000 en 2015). En el Centro de Salud de San Martín Sacatepéquez se incluye personas provenientes de ese mismo municipio (población 28,000 en 2015)</p>
-<p><strong>Santa Rosa</strong> En el Hospital Regional de Cuilapa se incluye personas provenientes de Santa Rosa (población 350,000 en 2015). En el Centro de Salud de Nueva Santa Rosa se incluye personas provenientes de ese mismo municipio (población 38,000 en 2015).</p>
-</div>
-</div>
-<div id="second-row" class="section level2">
-<h2>Second row</h2>
-<div id="tabla-1-definiciones-de-caso.-resumen-de-las-definiciones-de-caso-utilizadas-para-capturar-casos-en-cada-sindrome-vigilado.-puede-consultar-las-definiciones-especificas-en-la-pestana-de-cada-sindrome." class="section level3">
-<h3><strong>Tabla 1: Definiciones de caso.</strong> </br>Resumen de las definiciones de caso utilizadas para capturar casos en cada síndrome vigilado. </br>*Puede consultar las definiciones específicas en la pestaña de cada síndrome.</h3>
-<table>
-<colgroup>
-<col width="19%" />
-<col width="40%" />
-<col width="39%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Síndrome</th>
-<th align="center">Hospitalizados</th>
-<th align="center">Ambulatorios en clínica</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><span title="Clic para consultar detalles"> <a href="#sindrome-respiratorio">respiratorio</a> *</span></td>
-<td align="center">Al menos un signo o síntoma de enfermedad respiratoria y evidencia de infección aguda (todas las edades) </br><strong>o</strong></br> Signos de peligro en niños menores a 5 años * (AIEPI)</td>
-<td align="center">Fiebre documentada ≥ 38ºC con historial de tos o dolor de garganta durante los 14 días previos</td>
-</tr>
-<tr class="even">
-<td align="center"><span title="Clic para consultar detalles"> <a href="#sindrome-diarreico">diarreico</a> </span></td>
-<td align="center">Reporta 3 o más deposiciones no formadas o líquidas en un período de 24 horas durante los 14 días previos a la visita a la emergencia</td>
-<td align="center">Reporta 3 o más deposiciones no formadas o líquidas en un período de 24 horas durante los 14 días previos a la visita a la clínica</td>
-</tr>
-<tr class="odd">
-<td align="center"><span title="Clic para consultar detalles"> <a href="#sindrome-febril">febril</a> </span></td>
-<td align="center">Fiebre sin una causa aparente con inicio &lt; 7 días antes, al presentarse para recibir atención médica, </br><strong>o</strong></br> fiebre documentada ≥ 38ºC durante la consulta o durante las 24 horas siguientes al ingreso hospitalario</td>
-<td align="center">Fiebre sin una causa aparente con inicio &lt; 7 días antes, al presentarse para recibir atención médica, </br><strong>o</strong></br> fiebre documentada ≥ 38ºC durante la consulta</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="tabla-2-alcance-del-esfuerzo-de-vigilancia.-total-de-pacientes-tamizados-por-vico-elegibles-a-cada-sindrome-y-enrolados-en-el-estudio-por-cada-sitio-activo-datos-del-ultimo-ano-de-vigilancia-desde-2017-01-22-hasta-2018-01-26." class="section level3">
-<h3><strong>Tabla 2: Alcance del esfuerzo de vigilancia.</strong> </br>Total de pacientes tamizados por VICo, elegibles a cada síndrome y enrolados en el estudio por cada sitio activo </br> (datos del último año de vigilancia, desde 2017-01-22 hasta 2018-01-26).</h3>
+<div id="resumen" class="section level1" data-orientation="columns">
+<h1>Resumen</h1>
+<div id="columna-1-tablas-de-etiologia" class="section level2 tabset">
+<h2>columna 1: Tablas de etiología</h2>
+<h4>
+Tablas de etiologías detectadas
+</h4>
+<p>Patógenos detectados por los laboratorios, según sitio que detectó el caso.</p>
+<ul>
+<li>NA: No aplica, o información no disponible.</li>
+<li>**: Número de pacientes para los que se tomó muestras pero no se han procesado.</li>
+</ul>
+<div id="hospital-regional-de-cuilapa" class="section level3">
+<h3>Hospital regional de </br> <strong>Cuilapa</strong></h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
 <table>
 <thead>
 <tr class="header">
-<th align="left">Grupo</th>
-<th align="left">Quetzaltenango (CS-SM)</th>
-<th align="left">Quetzaltenango (H-Xela)</th>
-<th align="left">Santa Rosa (CS-NSR)</th>
-<th align="left">Santa Rosa (H-Cuilapa)</th>
+<th align="left">Etiología</th>
+<th align="left">Mes más reciente </br>(enero) </br> (n, %)</th>
+<th align="left">Mes anterior </br>(diciembre) </br> (n, %)</th>
+<th align="left">Histórico </br> (n, %)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Tamizados</td>
-<td align="left">928</td>
-<td align="left">1974</td>
-<td align="left">2692</td>
-<td align="left">993</td>
+<td align="left">Dengue</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">372 / 506 <font color='#C5C5C5'>(74)</font></td>
 </tr>
 <tr class="even">
-<td align="left">Elegibles e inscritos</td>
-<td align="left">197 (21%)</td>
-<td align="left">563 (29%)</td>
-<td align="left">442 (16%)</td>
-<td align="left">837 (84%)</td>
+<td align="left">Chikungunya</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">16 / 247 <font color='#C5C5C5'>(6)</font></td>
 </tr>
 <tr class="odd">
-<td align="left">Síndrome respiratorio</td>
-<td align="left">74 (38%)</td>
-<td align="left">477 (85%)</td>
-<td align="left">209 (47%)</td>
-<td align="left">535 (64%)</td>
+<td align="left">Zika</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 5 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">10 / 289 <font color='#C5C5C5'>(3)</font></td>
 </tr>
 <tr class="even">
-<td align="left">Síndrome diarreico</td>
-<td align="left">140 (71%)</td>
-<td align="left">98 (17%)</td>
-<td align="left">228 (52%)</td>
-<td align="left">280 (33%)</td>
+<td align="left">Malaria</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">48 / 85 <font color='#C5C5C5'>(56)</font></td>
 </tr>
 <tr class="odd">
-<td align="left">Síndrome febril</td>
-<td align="left">0 (0%)</td>
-<td align="left">1 (0%)</td>
-<td align="left">21 (5%)</td>
-<td align="left">36 (4%)</td>
+<td align="left">Leptospira</td>
+<td align="left">0 / 1 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 5 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">37 / 725 <font color='#C5C5C5'>(5)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Rickettsia</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">14 / 14 <font color='#C5C5C5'>(100)</font></td>
+</tr>
+<tr class="odd">
+<td align="left">Sin etiología determinada</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Pruebas pendientes**</td>
+<td align="left">2 / 2 <font color='#C5C5C5'>(100)</font></td>
+<td align="left">5 / 5 <font color='#C5C5C5'>(100)</font></td>
+<td align="left">769 / 782 <font color='#C5C5C5'>(98)</font></td>
 </tr>
 </tbody>
 </table>
-<!-- Tab with a summary of the respiratory syndrome surveillance -->
+</div>
+<div id="hospital-regional-de-quetzaltenango" class="section level3">
+<h3>Hospital regional de </br> <strong>Quetzaltenango</strong></h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Etiología</th>
+<th align="left">Mes más reciente </br>(enero) </br> (n, %)</th>
+<th align="left">Mes anterior </br>(diciembre) </br> (n, %)</th>
+<th align="left">Histórico </br> (n, %)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Dengue</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">1 / 1 <font color='#C5C5C5'>(100)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Chikungunya</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="odd">
+<td align="left">Zika</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Malaria</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">1 / 15 <font color='#C5C5C5'>(7)</font></td>
+</tr>
+<tr class="odd">
+<td align="left">Leptospira</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">1 / 32 <font color='#C5C5C5'>(3)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Rickettsia</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="odd">
+<td align="left">Sin etiología determinada</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Pruebas pendientes**</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">37 / 37 <font color='#C5C5C5'>(100)</font></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="centro-de-salud-en-nueva-santa-rosa" class="section level3">
+<h3>Centro de salud en </br> <strong>Nueva Santa Rosa</strong></h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Etiología</th>
+<th align="left">Mes más reciente </br>(enero) </br> (n, %)</th>
+<th align="left">Mes anterior </br>(diciembre) </br> (n, %)</th>
+<th align="left">Histórico </br> (n, %)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Dengue</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">63 / 271 <font color='#C5C5C5'>(23)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Chikungunya</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">59 / 205 <font color='#C5C5C5'>(29)</font></td>
+</tr>
+<tr class="odd">
+<td align="left">Zika</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 1 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">19 / 176 <font color='#C5C5C5'>(11)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Malaria</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 17 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="odd">
+<td align="left">Leptospira</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 1 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">26 / 381 <font color='#C5C5C5'>(7)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Rickettsia</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">7 / 7 <font color='#C5C5C5'>(100)</font></td>
+</tr>
+<tr class="odd">
+<td align="left">Sin etiología determinada</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Pruebas pendientes**</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">1 / 1 <font color='#C5C5C5'>(100)</font></td>
+<td align="left">503 / 503 <font color='#C5C5C5'>(100)</font></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="centro-de-salud-en-san-martin-sacatepequez" class="section level3">
+<h3>Centro de salud en </br> <strong>San Martín Sacatepéquez</strong></h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Etiología</th>
+<th align="left">Mes más reciente </br>(enero) </br> (n, %)</th>
+<th align="left">Mes anterior </br>(diciembre) </br> (n, %)</th>
+<th align="left">Histórico </br> (n, %)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Dengue</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Chikungunya</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="odd">
+<td align="left">Zika</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Malaria</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="odd">
+<td align="left">Leptospira</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Rickettsia</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="odd">
+<td align="left">Sin etiología determinada</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Pruebas pendientes**</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="columna-2-corredores-endemicos" class="section level2 tabset">
+<h2>columna 2: corredores endémicos</h2>
+<h4>
+Corredores endémicos de casos detectados
+</h4>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<p>Corredores endémicos para comparar comportamiento del año actual (línea negra sólida) con el comportamiento de los 6 años anteriores (2011 a 2017). Las líneas punteadas definen el intervalo de mínimo a máximo semanal de los años anteriores. Cuando la línea negra se encuentra:</p>
+<ul>
+<li>Dentro del área roja, la cantidad de casos detectados es mayor en esas semanas que en la mitad de las semanas correspondientes en los años anteriores.</li>
+<li>Dentro del área gris o más arriba, la cantidad de casos detectados es mayor que en el 75% de los años anteriores.</li>
+</ul>
+<div id="hospital-regional-de-cuilapa-1" class="section level3">
+<h3>Hospital regional de </br> <strong>Cuilapa</strong></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="460">
+
+</div>
+<p><img src="febril_files/figure-html4/febrile-corridor-sr-hospital-1.png" width="960" data-figure-id=fig1 /></p>
+</div>
+<div id="hospital-regional-de-quetzaltenango-1" class="section level3">
+<h3>Hospital regional de </br> <strong>Quetzaltenango</strong></h3>
+<p>Muy pocos casos históricos para corredor endémico.</p>
+<div class="knitr-options" data-fig-width="960" data-fig-height="460">
+
+</div>
+<p><img src="febril_files/figure-html4/febrile-corridor-qu-hospital-1.png" width="960" data-figure-id=fig2 /></p>
+</div>
+<div id="centro-de-salud-en-nueva-santa-rosa-1" class="section level3">
+<h3>Centro de salud en </br> <strong>Nueva Santa Rosa</strong></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="460">
+
+</div>
+<p><img src="febril_files/figure-html4/febrile-corridor-sr-clinic-1.png" width="960" data-figure-id=fig3 /></p>
+</div>
+<div id="centro-de-salud-en-san-martin-sacatepequez-1" class="section level3">
+<h3>Centro de salud en </br> <strong>San Martín Sacatepéquez</strong></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="460">
+
+</div>
+<p><img src="febril_files/figure-html4/febrile-corridor-qu-clinic-1.png" width="960" data-figure-id=fig4 /></p>
 </div>
 </div>
 </div>
-<div id="sindrome-respiratorio" class="section level1">
-<h1>Síndrome respiratorio</h1>
-<iframe src="respi.html" style="width: 100%; height: 100%; border: 0px;">
-</iframe>
-<!-- Tab with a summary of the diarrheal syndrome surveillance -->
+<div id="mapas-de-casos-recientes" class="section level1">
+<h1>Mapas de casos recientes</h1>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
 </div>
-<div id="sindrome-diarreico" class="section level1">
-<h1>Síndrome diarreico</h1>
-<iframe src="diarrea.html" style="width: 100%; height: 100%; border: 0px;">
-</iframe>
-<!-- Tab with a summary of the febrile syndrome surveillance -->
+<h4>
+Mapas de casos con etiología detectada
+</h4>
+<p>Los mapas muestran un punto por cada caso en las comunidades de origen de los pacientes, para cada departamento donde se realiza vigilancia, que fueron detectados durante los últimos 3 meses (2017-10-26 a 2018-01-26).</p>
+<div id="section" class="section level2">
+<h2></h2>
+<div id="santa-rosa" class="section level3">
+<h3>Santa Rosa</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
 </div>
-<div id="sindrome-febril" class="section level1">
-<h1>Síndrome febril</h1>
-<iframe src="febril.html" style="width: 100%; height: 100%; border: 0px;">
-</iframe>
-<!-- End of the main report page -->
+<pre><code>**No se detectó ninguna de las siguientes etiologías:**
+
+- Dengue
+- Chikungunya
+- Zika</code></pre>
+</div>
+<div id="quetzaltenango" class="section level3">
+<h3>Quetzaltenango</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<pre><code>**No se detectó ninguna de las siguientes etiologías:**
+
+- Dengue
+- Chikungunya
+- Zika</code></pre>
+</div>
+</div>
+</div>
+<div id="series-de-tiempo" class="section level1" data-orientation="columns">
+<h1>Series de tiempo</h1>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div id="hospital" class="section level2">
+<h2>Hospital</h2>
+<div id="hospital-dengue" class="section level3">
+<h3>Hospital: Dengue</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div id="htmlwidget-146db0faf760bdd6b609" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-146db0faf760bdd6b609">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,43]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Hospital de Cuilapa","Hospital de Quetzaltenango"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"febril","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2008-11-01T00:00:00.000Z","2008-12-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2009-02-01T00:00:00.000Z","2009-03-01T00:00:00.000Z","2009-04-01T00:00:00.000Z","2009-06-01T00:00:00.000Z","2009-07-01T00:00:00.000Z","2009-08-01T00:00:00.000Z","2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-09-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-04-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z"],[1,0,0,0,0,1,0,0,0,1,1,3,1,6,1,7,40,34,42,42,10,5,2,0,0,0,0,0,1,null,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,2,1,1,2,0,1,1,0,0,0,0,1,2,1,2,1,1,1,0,0,0,0,5,9,16,31,16,16,9,4,11,9,11,4,1,2,1,0,0,2,2,0,1,3,0,0,2,0,0,0],[null,null,null,0,0,null,0,0,null,0,0,1,0,0,null,null,null,null,0,0,null,0,0,0,0,0,0,0,0,0,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+<div id="hospital-chikungunya" class="section level3">
+<h3>Hospital: Chikungunya</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div id="htmlwidget-8c7cec9f5ec61fad2cff" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8c7cec9f5ec61fad2cff">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,43]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Hospital de Cuilapa","Hospital de Quetzaltenango"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"febril","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2008-11-01T00:00:00.000Z","2008-12-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2009-02-01T00:00:00.000Z","2009-03-01T00:00:00.000Z","2009-04-01T00:00:00.000Z","2009-06-01T00:00:00.000Z","2009-07-01T00:00:00.000Z","2009-08-01T00:00:00.000Z","2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-09-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-04-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z"],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,null,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,2,1,3,0,1,0,0,1,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[null,null,null,0,0,null,0,0,null,0,0,0,0,0,null,null,null,null,0,0,null,0,0,0,0,0,0,0,0,0,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+<div id="hospital-zika" class="section level3">
+<h3>Hospital: Zika</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div id="htmlwidget-d241fb45e413c38c5f67" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d241fb45e413c38c5f67">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,43]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Hospital de Cuilapa","Hospital de Quetzaltenango"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"febril","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2008-11-01T00:00:00.000Z","2008-12-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2009-02-01T00:00:00.000Z","2009-03-01T00:00:00.000Z","2009-04-01T00:00:00.000Z","2009-06-01T00:00:00.000Z","2009-07-01T00:00:00.000Z","2009-08-01T00:00:00.000Z","2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-09-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-04-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z"],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,null,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,1,0,4,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[null,null,null,0,0,null,0,0,null,0,0,0,0,0,null,null,null,null,0,0,null,0,0,0,0,0,0,0,0,0,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="centro-de-salud" class="section level2">
+<h2>Centro de salud</h2>
+<div id="centro-de-salud-dengue" class="section level3">
+<h3>Centro de salud: Dengue</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div id="htmlwidget-f17f98cd185accb36d21" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f17f98cd185accb36d21">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,43]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Centro de Salud NSR"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"febril","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-06-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2011-12-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2012-12-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-11-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-04-01T00:00:00.000Z","2014-05-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2014-12-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-12-01T00:00:00.000Z"],[0,0,0,1,0,0,1,11,9,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,1,5,3,1,2,1,2,0,0,0,0,0,0,0,0,0,1,2,0,2,0,0,2,0,0,1,0,0,2,0,1,0,0,1,3,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+<div id="centro-de-salud-chikungunya" class="section level3">
+<h3>Centro de salud: Chikungunya</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div id="htmlwidget-7c1842f537cdc92e4baa" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7c1842f537cdc92e4baa">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,43]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Centro de Salud NSR"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"febril","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-06-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2011-12-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2012-12-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-11-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-04-01T00:00:00.000Z","2014-05-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2014-12-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-12-01T00:00:00.000Z"],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,11,8,9,3,8,13,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+</div>
+<div id="centro-de-salud-zika" class="section level3">
+<h3>Centro de salud: Zika</h3>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div id="htmlwidget-60e7931059bcdfaf4c39" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-60e7931059bcdfaf4c39">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,43]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Centro de Salud NSR"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"febril","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-06-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2011-12-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2012-12-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-11-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-04-01T00:00:00.000Z","2014-05-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2014-12-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-12-01T00:00:00.000Z"],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,4,4,4,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<!-- End of the febrile report page -->
+</div>
+</div>
 </div>
 
 </div>
@@ -2738,7 +3007,7 @@ $(document).ready(function () {
 <script type="text/javascript">
 $(document).ready(function () {
   FlexDashboard.init({
-    theme: "cosmo",
+    theme: "cerulean",
     fillPage: true,
     orientation: "rows",
     storyboard: false,
