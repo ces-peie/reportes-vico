@@ -52,7 +52,7 @@ if(!file.exists(snapshot_file)){
     "epiWeekAdmision", "departamento", "municipio", "comunidad", "censo_comunidad",
     "edadAnios", "edadMeses", "edadDias", "fechaDeNacimiento",
     "campylobacter", "shigella", "EPEC", "ETEC", "rotavirus", "RTqPCR_NV1", "RTqPCR_NV2",
-    "ASTROVIRUS", "SAPOVIRUS",
+    "ASTROVIRUS", "SAPOVIRUS", "salmonella",
     # Sample variables
     "muestraHecesColecta",
     "muestraHecesColectaTipo",
@@ -112,6 +112,7 @@ etiologies <- list(
   astro = "Astrovirus",
   sapo = "Sapovirus",
   campy = "Campylobacter",
+  sal = "Salmonella",
   shig = "Shigella",
   epec = "E. coli enteropatógena",
   etec = "E. coli enterotóxica"
@@ -158,6 +159,11 @@ diarrea_min <- all_diarrea %>%
     campy = ifelse(
       test = !is.na(campylobacter),
       yes = campylobacter == 1,
+      no = NA
+    ),
+    sal = ifelse(
+      test = !is.na(salmonella),
+      yes = salmonella == 1,
       no = NA
     ),
     shig = ifelse(
