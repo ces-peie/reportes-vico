@@ -14,7 +14,9 @@
 # Function to calculate summary (positives, tested, percent) by etiology for
 # any given site
 #------------------------------------------------------------------------------*
-site_table_named <- function(.data, site = "all", etiology_names, format = NULL){
+site_table_named <- function(
+  .data, site = "all", etiology_names, format = NULL, condition = TRUE, ...
+){
   # Use spanish
   if(Sys.info()[["sysname"]] == "Windows") Sys.setlocale(locale = "Spanish_Guatemala.1252")
   if(Sys.info()[["sysname"]] == "Linux") Sys.setlocale(locale = "es_GT.UTF8")
@@ -44,6 +46,8 @@ site_table_named <- function(.data, site = "all", etiology_names, format = NULL)
   
   # Calculate summary
   .data %>%
+    # Filter data by condition
+    filter(!!!enquo(condition)) %>%
     # Assign time groups
     mutate(
       this_month = between(

@@ -48,6 +48,7 @@ if(!file.exists(snapshot_file)){
   # Define variable names
   all_vars <- c(
     "SubjectID", "SASubjectID", "PDAInsertDate", "fechaHoraAdmision", "SiteName", "SiteType",
+    "tamizadoEmergencia", "actualAdmitido",
     "elegibleDiarrea", "SiteDepartamento", "epiYearAdmision",
     "epiWeekAdmision", "departamento", "municipio", "comunidad", "censo_comunidad",
     "edadAnios", "edadMeses", "edadDias", "fechaDeNacimiento",
@@ -154,7 +155,18 @@ diarrea_min <- all_diarrea %>%
   # Assign etiologies. NA does not apply, TRUE is positive, FALSE is negative
   minimal_dataset_etiologies(
     # Condition
-    condition = elegibleDiarrea == 1, 
+    condition = elegibleDiarrea == 1,
+    # Emergency room screening
+    emergency = ifelse(
+      test = !is.na(tamizadoEmergencia),
+      yes = tamizadoEmergencia == 1,
+      no = NA
+    ),
+    admitted = ifelse(
+      test = !is.na(actualAdmitido),
+      yes = actualAdmitido == 1,
+      no = NA
+    ),
     # Define etiology
     campy = ifelse(
       test = !is.na(campylobacter),
@@ -243,15 +255,38 @@ Patógenos detectados por los laboratorios, según sitio que detectó el caso.
 
 ### Hospital regional de </br> **Cuilapa**
 
+#### **Admitidos al hospital**
+
 ```{r, results='asis'}
-site_table(diarrea_min, site = "H-Cuilapa")
+site_table(
+  diarrea_min, site = "H-Cuilapa",
+  condition = (admitted | !emergency) | (is.na(admitted) | is.na(emergency))
+)
+```
+
+#### **Solamente tratados en la emeregencia**
+
+```{r, results='asis'}
+site_table(diarrea_min, site = "H-Cuilapa", condition = emergency & !admitted)
 ```
 
 
 ### Hospital regional de </br> **Quetzaltenango**
 
+#### **Admitidos al hospital**
+
 ```{r, results='asis'}
-site_table(diarrea_min, site = "H-Xela")
+site_table(
+  diarrea_min, site = "H-Xela",
+  condition = (admitted | !emergency) | (is.na(admitted) | is.na(emergency))
+)
+```
+
+
+#### **Solamente tratados en la emeregencia**
+
+```{r, results='asis'}
+site_table(diarrea_min, site = "H-Xela", condition = emergency & !admitted)
 ```
 
 
@@ -295,19 +330,55 @@ la cantidad de casos detectados es mayor que en el 75% de los años anteriores.
 
 ### Hospital regional de </br> **Cuilapa**
 
+#### **Admitidos al hospital**
+
 ```{r enteric-corridor-sr-hospital, dev='png', fig.width=10}
-endemic_corridor(
-  diarrea_min, site = "H-Cuilapa", previous_years = previous_years, ylim = ylim
-)
+diarrea_min %>%
+  filter(
+    (admitted | !emergency) | (is.na(admitted) | is.na(emergency))
+  ) %>%
+  endemic_corridor(
+    site = "H-Cuilapa", previous_years = previous_years, ylim = ylim
+  )
+```
+
+#### **Solamente tratados en la emergencia**
+
+```{r enteric-corridor-sr-hospital-emergency, dev='png', fig.width=10}
+diarrea_min %>%
+  filter(
+    emergency & !admitted
+  ) %>%
+  endemic_corridor(
+    site = "H-Cuilapa", previous_years = previous_years, ylim = ylim
+  )
 ```
 
 
 ### Hospital regional de </br> **Quetzaltenango**
 
+#### **Admitidos al hospital**
+
 ```{r enteric-corridor-qu-hospital, fig.width=10}
-endemic_corridor(
-  diarrea_min, site = "H-Xela", previous_years = previous_years, ylim = ylim
-)
+diarrea_min %>%
+  filter(
+    (admitted | !emergency) | (is.na(admitted) | is.na(emergency))
+  ) %>%
+  endemic_corridor(
+    site = "H-Xela", previous_years = previous_years, ylim = ylim
+  )
+```
+
+#### **Solamente tratados en la emergencia**
+
+```{r enteric-corridor-qu-hospital-emergency, fig.width=10}
+diarrea_min %>%
+  filter(
+    emergency & !admitted
+  ) %>%
+  endemic_corridor(
+    site = "H-Xela", previous_years = previous_years, ylim = ylim
+  )
 ```
 
 
