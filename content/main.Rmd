@@ -56,6 +56,14 @@ source("scripts/get-data.R")
 
 
 
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@CesUvg">
+<meta name="twitter:creator" content="@odeleongt">
+<meta name="twitter:title" content="Enfermedad respiratoria en Santa Rosa">
+<meta name="twitter:description" content="`r last_friday` - Esta gráfica muestra los casos de enfermedad respiratoria detectados este año en el hospital regional de Cuilapa, Santa Rosa, (línea negra) sobre el historial de casos de los últimos 6 años (2011 a 2017).">
+<meta name="twitter:image" content="https://ces-peie.github.io/reportes-vico/respi_files/figure-html4/respi-corridor-sr-hospital-1.png">
+
+
 
 <!-- Tab with general content regarging the surveillance -->
 # Contenido general
