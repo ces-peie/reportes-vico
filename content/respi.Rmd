@@ -52,7 +52,9 @@ if(!file.exists(snapshot_file)){
     "epiWeekAdmision", "departamento", "municipio", "comunidad", "censo_comunidad",
     "edadAnios", "edadMeses", "edadDias", "fechaDeNacimiento", "Binax_HizoPrueba",
     "Binax_Resultado", "viralPCR_Hizo", "viralPCR_FluA", "viralPCR_FluB",
-    "viralPCR_RSV", "viralPCR_hMPV", "muestraFroteOPColecta", "muestraFroteNP"
+    "viralPCR_RSV", "viralPCR_hMPV", "muestraFroteOPColecta", "muestraFroteNP",
+    "pertussis_sosp", "SeHizoPCR_Pertussis",
+    "Bordetella_spp_PCR", "B_Pertussis_PCR", "B_Parapertussis_PCR"
   )
   
   # Get data up to last Friday
