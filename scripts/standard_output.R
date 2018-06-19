@@ -200,7 +200,8 @@ endemic_corridor <- function(
   # Casos acumulados
   inscritos_actuales <- inscritos_respi_actual %>%
     group_by(epi_week) %>%
-    summarise(casos = n())
+    summarise(casos = n()) %>% 
+    complete(epi_week = seq(1, max(epi_week)), fill = list(casos = NA_integer_))
   
   # Texto tipos de linea
   casos_actual <- paste("Casos", year(last_friday))
