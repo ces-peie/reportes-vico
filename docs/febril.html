@@ -8,9 +8,9 @@
 
 
 
-<title>Síndrome respiratorio</title>
+<title>Síndrome febril</title>
 
-<meta property="og:title" content="Síndrome respiratorio" />
+<meta property="og:title" content="Síndrome febril" />
 
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
 
@@ -21,7 +21,7 @@
 window.FlexDashboardComponents = [];
 </script>
 
-<script src="lib/jquery-1.12.4/jquery.min.js"></script>
+<script src="lib/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="lib/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="lib/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -29,13 +29,6 @@ window.FlexDashboardComponents = [];
 <script src="lib/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="lib/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
 <script src="lib/htmlwidgets-1.2/htmlwidgets.js"></script>
-<link href="lib/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="lib/leaflet-1.3.1/leaflet.js"></script>
-<link href="lib/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="lib/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
-<script src="lib/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="lib/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="lib/leaflet-binding-2.0.1/leaflet.js"></script>
 <link href="lib/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
 <script src="lib/dygraphs-1.1.1/dygraph-combined.js"></script>
 <script src="lib/dygraphs-1.1.1/shapes.js"></script>
@@ -788,7 +781,7 @@ html, body {
   
 </span>
 <span class="navbar-brand">
-  Síndrome respiratorio
+  Síndrome febril
   <span class="navbar-author">
         </span>
 </span>
@@ -803,10 +796,10 @@ html, body {
 </div><!--/.container-->
 </div><!--/.navbar-->
 
-<img class="mobile-figure" data-mobile-figure-id=fig1 src="/home/odeleon/Desktop/vico/repositories/reports/docs/respi_files/figure-html/respi-corridor-sr-hospital-1.mb.png" />
-<img class="mobile-figure" data-mobile-figure-id=fig2 src="/home/odeleon/Desktop/vico/repositories/reports/docs/respi_files/figure-html/respi-corridor-qu-hospital-1.mb.png" />
-<img class="mobile-figure" data-mobile-figure-id=fig3 src="/home/odeleon/Desktop/vico/repositories/reports/docs/respi_files/figure-html/respi-corridor-sr-clinic-1.mb.png" />
-<img class="mobile-figure" data-mobile-figure-id=fig4 src="/home/odeleon/Desktop/vico/repositories/reports/docs/respi_files/figure-html/respi-corridor-qu-clinic-1.mb.png" />
+<img class="mobile-figure" data-mobile-figure-id=fig1 src="/home/odeleon/Desktop/vico/repositories/reports/docs/febril_files/figure-html/febrile-corridor-sr-hospital-1.mb.png" />
+<img class="mobile-figure" data-mobile-figure-id=fig2 src="/home/odeleon/Desktop/vico/repositories/reports/docs/febril_files/figure-html/febrile-corridor-qu-hospital-1.mb.png" />
+<img class="mobile-figure" data-mobile-figure-id=fig3 src="/home/odeleon/Desktop/vico/repositories/reports/docs/febril_files/figure-html/febrile-corridor-sr-clinic-1.mb.png" />
+<img class="mobile-figure" data-mobile-figure-id=fig4 src="/home/odeleon/Desktop/vico/repositories/reports/docs/febril_files/figure-html/febrile-corridor-qu-clinic-1.mb.png" />
 <script type="text/javascript">
 
 
@@ -2586,7 +2579,6 @@ Tablas de etiologías detectadas
 <p>Patógenos detectados por los laboratorios, según sitio que detectó el caso.</p>
 <ul>
 <li>NA: No aplica, o información no disponible.</li>
-<li>*: Prueba BINAX realizada únicamente en el hospital, en pacientes con 18 o más años de edad.</li>
 <li>**: Número de pacientes para los que se tomó muestras pero no se han procesado.</li>
 </ul>
 <div id="hospital-regional-de-cuilapa" class="section level3">
@@ -2605,40 +2597,52 @@ Tablas de etiologías detectadas
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Influenza (A y B)</td>
-<td align="left">3 / 14 <font color='#C5C5C5'>(21)</font></td>
-<td align="left">5 / 22 <font color='#C5C5C5'>(23)</font></td>
-<td align="left">375 / 5545 <font color='#C5C5C5'>(7)</font></td>
+<td align="left">Dengue</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 1 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">379 / 528 <font color='#C5C5C5'>(72)</font></td>
 </tr>
 <tr class="even">
-<td align="left">Virus sincitial respiratorio</td>
-<td align="left">0 / 14 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 22 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">1420 / 5545 <font color='#C5C5C5'>(26)</font></td>
+<td align="left">Chikungunya</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">16 / 247 <font color='#C5C5C5'>(6)</font></td>
 </tr>
 <tr class="odd">
-<td align="left">Metaneumovirus humano</td>
-<td align="left">0 / 14 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 22 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">335 / 5545 <font color='#C5C5C5'>(6)</font></td>
+<td align="left">Zika</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 5 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">10 / 304 <font color='#C5C5C5'>(3)</font></td>
 </tr>
 <tr class="even">
-<td align="left">Neumococo*</td>
+<td align="left">Malaria</td>
 <td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 <td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">144 / 1164 <font color='#C5C5C5'>(12)</font></td>
+<td align="left">48 / 85 <font color='#C5C5C5'>(56)</font></td>
+</tr>
+<tr class="odd">
+<td align="left">Leptospira</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">37 / 728 <font color='#C5C5C5'>(5)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Rickettsia</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">14 / 14 <font color='#C5C5C5'>(100)</font></td>
 </tr>
 <tr class="odd">
 <td align="left">Sin etiología determinada</td>
-<td align="left">0 / 18 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 23 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">800 / 5654 <font color='#C5C5C5'>(14)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 </tr>
 <tr class="even">
 <td align="left">Pruebas pendientes**</td>
-<td align="left">4 / 18 <font color='#C5C5C5'>(22)</font></td>
-<td align="left">1 / 23 <font color='#C5C5C5'>(4)</font></td>
-<td align="left">109 / 5734 <font color='#C5C5C5'>(2)</font></td>
+<td align="left">2 / 2 <font color='#C5C5C5'>(100)</font></td>
+<td align="left">5 / 5 <font color='#C5C5C5'>(100)</font></td>
+<td align="left">784 / 797 <font color='#C5C5C5'>(98)</font></td>
 </tr>
 </tbody>
 </table>
@@ -2659,40 +2663,52 @@ Tablas de etiologías detectadas
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Influenza (A y B)</td>
-<td align="left">1 / 9 <font color='#C5C5C5'>(11)</font></td>
-<td align="left">1 / 16 <font color='#C5C5C5'>(6)</font></td>
-<td align="left">445 / 5128 <font color='#C5C5C5'>(9)</font></td>
+<td align="left">Dengue</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">1 / 1 <font color='#C5C5C5'>(100)</font></td>
 </tr>
 <tr class="even">
-<td align="left">Virus sincitial respiratorio</td>
-<td align="left">0 / 9 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 16 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">1471 / 5127 <font color='#C5C5C5'>(29)</font></td>
+<td align="left">Chikungunya</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 </tr>
 <tr class="odd">
-<td align="left">Metaneumovirus humano</td>
-<td align="left">0 / 9 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 16 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">402 / 5128 <font color='#C5C5C5'>(8)</font></td>
+<td align="left">Zika</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 </tr>
 <tr class="even">
-<td align="left">Neumococo*</td>
+<td align="left">Malaria</td>
 <td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 <td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">138 / 1270 <font color='#C5C5C5'>(11)</font></td>
+<td align="left">1 / 15 <font color='#C5C5C5'>(7)</font></td>
+</tr>
+<tr class="odd">
+<td align="left">Leptospira</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">1 / 32 <font color='#C5C5C5'>(3)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Rickettsia</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 </tr>
 <tr class="odd">
 <td align="left">Sin etiología determinada</td>
-<td align="left">0 / 17 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 17 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">875 / 5193 <font color='#C5C5C5'>(17)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 </tr>
 <tr class="even">
 <td align="left">Pruebas pendientes**</td>
-<td align="left">8 / 17 <font color='#C5C5C5'>(47)</font></td>
-<td align="left">1 / 17 <font color='#C5C5C5'>(6)</font></td>
-<td align="left">59 / 5224 <font color='#C5C5C5'>(1)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">38 / 38 <font color='#C5C5C5'>(100)</font></td>
 </tr>
 </tbody>
 </table>
@@ -2713,40 +2729,52 @@ Tablas de etiologías detectadas
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Influenza (A y B)</td>
-<td align="left">0 / 7 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">1 / 9 <font color='#C5C5C5'>(11)</font></td>
-<td align="left">656 / 2150 <font color='#C5C5C5'>(31)</font></td>
+<td align="left">Dengue</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">63 / 277 <font color='#C5C5C5'>(23)</font></td>
 </tr>
 <tr class="even">
-<td align="left">Virus sincitial respiratorio</td>
-<td align="left">0 / 7 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 9 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">282 / 2149 <font color='#C5C5C5'>(13)</font></td>
+<td align="left">Chikungunya</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">59 / 205 <font color='#C5C5C5'>(29)</font></td>
 </tr>
 <tr class="odd">
-<td align="left">Metaneumovirus humano</td>
-<td align="left">0 / 7 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 9 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">117 / 2150 <font color='#C5C5C5'>(5)</font></td>
+<td align="left">Zika</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 1 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">19 / 182 <font color='#C5C5C5'>(10)</font></td>
 </tr>
 <tr class="even">
-<td align="left">Neumococo*</td>
+<td align="left">Malaria</td>
 <td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 <td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 17 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="odd">
+<td align="left">Leptospira</td>
 <td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">26 / 384 <font color='#C5C5C5'>(7)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Rickettsia</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">7 / 7 <font color='#C5C5C5'>(100)</font></td>
 </tr>
 <tr class="odd">
 <td align="left">Sin etiología determinada</td>
-<td align="left">0 / 10 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 9 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 2208 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 </tr>
 <tr class="even">
 <td align="left">Pruebas pendientes**</td>
-<td align="left">3 / 10 <font color='#C5C5C5'>(30)</font></td>
-<td align="left">0 / 9 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">6 / 2208 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">1 / 1 <font color='#C5C5C5'>(100)</font></td>
+<td align="left">1 / 1 <font color='#C5C5C5'>(100)</font></td>
+<td align="left">510 / 510 <font color='#C5C5C5'>(100)</font></td>
 </tr>
 </tbody>
 </table>
@@ -2767,40 +2795,52 @@ Tablas de etiologías detectadas
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Influenza (A y B)</td>
-<td align="left">0 / 1 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 2 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">39 / 105 <font color='#C5C5C5'>(37)</font></td>
+<td align="left">Dengue</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 </tr>
 <tr class="even">
-<td align="left">Virus sincitial respiratorio</td>
-<td align="left">0 / 1 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 2 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">13 / 105 <font color='#C5C5C5'>(12)</font></td>
+<td align="left">Chikungunya</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 </tr>
 <tr class="odd">
-<td align="left">Metaneumovirus humano</td>
-<td align="left">0 / 1 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 2 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">6 / 105 <font color='#C5C5C5'>(6)</font></td>
+<td align="left">Zika</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 </tr>
 <tr class="even">
-<td align="left">Neumococo*</td>
+<td align="left">Malaria</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="odd">
+<td align="left">Leptospira</td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+</tr>
+<tr class="even">
+<td align="left">Rickettsia</td>
 <td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 <td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 <td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 </tr>
 <tr class="odd">
 <td align="left">Sin etiología determinada</td>
-<td align="left">0 / 3 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 2 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">0 / 119 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 </tr>
 <tr class="even">
 <td align="left">Pruebas pendientes**</td>
-<td align="left">1 / 3 <font color='#C5C5C5'>(33)</font></td>
-<td align="left">0 / 2 <font color='#C5C5C5'>(0)</font></td>
-<td align="left">11 / 119 <font color='#C5C5C5'>(9)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
+<td align="left">0 / 0 <font color='#C5C5C5'>(0)</font></td>
 </tr>
 </tbody>
 </table>
@@ -2824,28 +2864,29 @@ Corredores endémicos de casos detectados
 <div class="knitr-options" data-fig-width="960" data-fig-height="460">
 
 </div>
-<p><img src="respi_files/figure-html/respi-corridor-sr-hospital-1.png" width="960" data-figure-id=fig1 /></p>
+<p><img src="febril_files/figure-html/febrile-corridor-sr-hospital-1.png" width="960" data-figure-id=fig1 /></p>
 </div>
 <div id="hospital-regional-de-quetzaltenango-1" class="section level3">
 <h3>Hospital regional de </br> <strong>Quetzaltenango</strong></h3>
+<p>Muy pocos casos históricos para corredor endémico.</p>
 <div class="knitr-options" data-fig-width="960" data-fig-height="460">
 
 </div>
-<p><img src="respi_files/figure-html/respi-corridor-qu-hospital-1.png" width="960" data-figure-id=fig2 /></p>
+<p><img src="febril_files/figure-html/febrile-corridor-qu-hospital-1.png" width="960" data-figure-id=fig2 /></p>
 </div>
 <div id="centro-de-salud-en-nueva-santa-rosa-1" class="section level3">
 <h3>Centro de salud en </br> <strong>Nueva Santa Rosa</strong></h3>
 <div class="knitr-options" data-fig-width="960" data-fig-height="460">
 
 </div>
-<p><img src="respi_files/figure-html/respi-corridor-sr-clinic-1.png" width="960" data-figure-id=fig3 /></p>
+<p><img src="febril_files/figure-html/febrile-corridor-sr-clinic-1.png" width="960" data-figure-id=fig3 /></p>
 </div>
 <div id="centro-de-salud-en-san-martin-sacatepequez-1" class="section level3">
 <h3>Centro de salud en </br> <strong>San Martín Sacatepéquez</strong></h3>
 <div class="knitr-options" data-fig-width="960" data-fig-height="460">
 
 </div>
-<p><img src="respi_files/figure-html/respi-corridor-qu-clinic-1.png" width="960" data-figure-id=fig4 /></p>
+<p><img src="febril_files/figure-html/febrile-corridor-qu-clinic-1.png" width="960" data-figure-id=fig4 /></p>
 </div>
 </div>
 </div>
@@ -2865,16 +2906,22 @@ Mapas de casos con etiología detectada
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-9a51651ecfbba9428221" style="width:576px;height:460.8px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9a51651ecfbba9428221">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"setMaxBounds","args":[14.5093492697969,-90.6752513861667,13.7833807091616,-90.0579367291331]},{"method":"addTiles","args":["http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",null,null,{"minZoom":10,"maxZoom":15}]},{"method":"addMarkers","args":[[14.3966825748529,14.3181142104843,14.2494983066114],[-90.3346728537088,-90.3942564224467,-90.4275337694331],{"iconUrl":{"data":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=","index":0},"iconWidth":1,"iconHeight":1},null,"Comunidades",{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,["AMBERES","EL CERINAL",null],{"interactive":false,"permanent":true,"direction":"center","opacity":0.3,"offset":[0,0],"textsize":"10px","textOnly":true,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[[14.2502783551827,14.3970750171968,14.2502063218801,14.3188387957944],[-90.4264219983668,-90.3333977764169,-90.4264298629967,-90.3933933297762],6,null,null,{"interactive":true,"className":"","stroke":true,"color":["#E41A1C","#E41A1C","#E41A1C","#984EA3"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["#E41A1C","#E41A1C","#E41A1C","#984EA3"],"fillOpacity":0.2},null,null,["Influenza (A y B)<\/br>2018-05-07","Influenza (A y B)<\/br>2018-05-15","Influenza (A y B)<\/br>2018-05-16","Virus sincitial respiratorio<\/br>2018-04-09"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLayersControl","args":[[],"Comunidades",{"collapsed":false,"autoZIndex":true,"position":"bottomleft"}]},{"method":"hideGroup","args":["Comunidades"]},{"method":"addLegend","args":[{"colors":["#E41A1C","#984EA3"],"labels":["Influenza (A y B)","Virus sincitial respiratorio"],"na_color":null,"na_label":"NA","opacity":1,"position":"bottomleft","type":"factor","title":"Etiología","extra":null,"layerId":null,"className":"info legend","group":null}]}],"fitBounds":[14.4493492697969,-90.6652513861667,13.8433807091616,-90.0679367291331,[]],"limits":{"lat":[14.2494983066114,14.3970750171968],"lng":[-90.4275337694331,-90.3333977764169]}},"evals":[],"jsHooks":[]}</script>
+<pre><code>**No se detectó ninguna de las siguientes etiologías:**
+
+- Dengue
+- Chikungunya
+- Zika</code></pre>
 </div>
 <div id="quetzaltenango" class="section level3">
 <h3>Quetzaltenango</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-7ad1b37b32c708650a47" style="width:576px;height:460.8px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7ad1b37b32c708650a47">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"setMaxBounds","args":[15.2311748641773,-92.1392730921303,14.4888090845914,-91.4041057445844]},{"method":"addTiles","args":["http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",null,null,{"minZoom":10,"maxZoom":15}]},{"method":"addMarkers","args":[[14.9846397076622,14.8553159627032,14.893047982507,14.8688721228566,15.0103165611816,14.8437666849558,14.8077382652274],[-91.6659131161,-91.6249905800609,-91.6002504824609,-91.6215520229232,-91.623523907827,-91.5193057146056,-91.6712675441564],{"iconUrl":{"data":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=","index":0},"iconWidth":1,"iconHeight":1},null,"Comunidades",{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,["CHUICABAL","CONCEPCION CHIQUIRICHAPA","LA EMBOSCADA","OSTUNCALCO","PIEDRA GRANDE","QUETZALTENANGO",null],{"interactive":false,"permanent":true,"direction":"center","opacity":0.3,"offset":[0,0],"textsize":"10px","textOnly":true,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[[14.8079183506338,14.8080234793713,14.8084512135912,14.808289983394,14.8073970677082,14.8445001054964,14.843670921652,14.8554305679694,15.0102378706758,14.8931837858456,14.8442356973001,14.8444210810733,14.845147007456,14.9853148522816,14.8687827040615],[-91.6706387160067,-91.6708981928901,-91.670330781877,-91.6705565656673,-91.6707559587964,-91.518832969214,-91.5185442526887,-91.6249194142482,-91.6239420742503,-91.6006149563557,-91.5179570955509,-91.5189659429657,-91.5186723459524,-91.6657187740341,-91.6214239543627],6,null,null,{"interactive":true,"className":"","stroke":true,"color":["#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#984EA3"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#E41A1C","#984EA3"],"fillOpacity":0.2},null,null,["Influenza (A y B)<\/br>2018-04-03","Influenza (A y B)<\/br>2018-04-05","Influenza (A y B)<\/br>2018-04-06","Influenza (A y B)<\/br>2018-04-30","Influenza (A y B)<\/br>2018-04-30","Influenza (A y B)<\/br>2018-04-04","Influenza (A y B)<\/br>2018-04-07","Influenza (A y B)<\/br>2018-04-11","Influenza (A y B)<\/br>2018-04-16","Influenza (A y B)<\/br>2018-04-24","Influenza (A y B)<\/br>2018-04-27","Influenza (A y B)<\/br>2018-04-29","Influenza (A y B)<\/br>2018-05-02","Influenza (A y B)<\/br>2018-06-14","Virus sincitial respiratorio<\/br>2018-04-16"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLayersControl","args":[[],"Comunidades",{"collapsed":false,"autoZIndex":true,"position":"bottomleft"}]},{"method":"hideGroup","args":["Comunidades"]},{"method":"addLegend","args":[{"colors":["#E41A1C","#984EA3"],"labels":["Influenza (A y B)","Virus sincitial respiratorio"],"na_color":null,"na_label":"NA","opacity":1,"position":"bottomleft","type":"factor","title":"Etiología","extra":null,"layerId":null,"className":"info legend","group":null}]}],"fitBounds":[15.1711748641773,-92.1292730921303,14.5488090845914,-91.4141057445844,[]],"limits":{"lat":[14.8073970677082,15.0103165611816],"lng":[-91.6712675441564,-91.5179570955509]}},"evals":[],"jsHooks":[]}</script>
+<pre><code>**No se detectó ninguna de las siguientes etiologías:**
+
+- Dengue
+- Chikungunya
+- Zika</code></pre>
 </div>
 </div>
 </div>
@@ -2885,73 +2932,57 @@ Mapas de casos con etiología detectada
 </div>
 <div id="hospital" class="section level2">
 <h2>Hospital</h2>
-<div id="hospital-influenza-a-y-b" class="section level3">
-<h3>Hospital: Influenza A y B</h3>
+<div id="hospital-dengue" class="section level3">
+<h3>Hospital: Dengue</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-f46b5ffb9a8945113a91" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f46b5ffb9a8945113a91">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,93]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Hospital de Cuilapa","Hospital de Quetzaltenango"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"respi","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2007-11-01T00:00:00.000Z","2007-12-01T00:00:00.000Z","2008-01-01T00:00:00.000Z","2008-02-01T00:00:00.000Z","2008-03-01T00:00:00.000Z","2008-04-01T00:00:00.000Z","2008-05-01T00:00:00.000Z","2008-06-01T00:00:00.000Z","2008-07-01T00:00:00.000Z","2008-08-01T00:00:00.000Z","2008-09-01T00:00:00.000Z","2008-10-01T00:00:00.000Z","2008-11-01T00:00:00.000Z","2008-12-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2009-02-01T00:00:00.000Z","2009-03-01T00:00:00.000Z","2009-04-01T00:00:00.000Z","2009-05-01T00:00:00.000Z","2009-06-01T00:00:00.000Z","2009-07-01T00:00:00.000Z","2009-08-01T00:00:00.000Z","2009-09-01T00:00:00.000Z","2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-09-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-04-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-06-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2011-12-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2012-12-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-11-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-04-01T00:00:00.000Z","2014-05-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2014-12-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2016-12-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z"],[0,0,0,0,0,0,3,6,3,0,2,0,0,0,0,1,1,4,9,5,15,20,8,5,1,0,0,1,3,4,7,4,3,11,11,2,0,0,0,1,1,4,0,1,4,2,3,1,1,2,1,1,3,3,2,0,3,0,5,2,1,2,3,2,5,7,2,8,4,6,5,3,2,1,0,0,0,1,1,0,2,0,2,0,1,1,2,1,2,3,2,8,1,2,0,1,0,1,1,6,13,17,4,2,4,4,3,1,2,0,5,4,8,5,0,6,6,2,4,3,5,1,4,0,1,5,5,3],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,2,12,3,4,2,7,23,11,7,5,0,2,1,9,9,12,16,6,6,3,15,1,4,2,2,8,3,0,2,2,1,2,1,2,0,2,4,25,7,1,0,0,0,1,1,6,4,15,6,2,1,1,1,1,1,3,5,4,0,0,5,9,3,1,1,0,2,2,1,5,2,3,2,4,3,1,1,0,1,0,1,2,0,4,1,17,9,1,0,2,1,3,3,0,1,5,5,16,6,4,4,3,2,0,4,7,3,1,1,8,7,1,1]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<div id="htmlwidget-474bcd18dad40d8ecd36" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-474bcd18dad40d8ecd36">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,43]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Hospital de Cuilapa","Hospital de Quetzaltenango"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"febril","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2008-11-01T00:00:00.000Z","2008-12-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2009-02-01T00:00:00.000Z","2009-03-01T00:00:00.000Z","2009-04-01T00:00:00.000Z","2009-06-01T00:00:00.000Z","2009-07-01T00:00:00.000Z","2009-08-01T00:00:00.000Z","2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-09-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-04-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z"],[1,0,0,0,0,1,0,0,0,1,1,3,1,6,1,7,40,34,42,42,10,5,2,0,0,0,0,0,1,null,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,2,1,1,2,0,1,1,0,0,0,0,1,2,1,2,1,1,1,0,0,0,0,5,9,16,31,16,16,9,4,11,9,11,4,1,2,1,0,0,2,2,0,1,3,0,0,4,2,2,0,1,0,0,0,0],[null,null,null,0,0,null,0,0,null,0,0,1,0,0,null,null,null,null,0,0,null,0,0,0,0,0,0,0,0,0,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
 </div>
-<div id="hospital-virus-sincitial-respiratorio" class="section level3">
-<h3>Hospital: Virus sincitial respiratorio</h3>
+<div id="hospital-chikungunya" class="section level3">
+<h3>Hospital: Chikungunya</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-42c5551daa838a340bb0" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
-<script type="application/json" data-for="htmlwidget-42c5551daa838a340bb0">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,93]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Hospital de Cuilapa","Hospital de Quetzaltenango"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"respi","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2007-11-01T00:00:00.000Z","2007-12-01T00:00:00.000Z","2008-01-01T00:00:00.000Z","2008-02-01T00:00:00.000Z","2008-03-01T00:00:00.000Z","2008-04-01T00:00:00.000Z","2008-05-01T00:00:00.000Z","2008-06-01T00:00:00.000Z","2008-07-01T00:00:00.000Z","2008-08-01T00:00:00.000Z","2008-09-01T00:00:00.000Z","2008-10-01T00:00:00.000Z","2008-11-01T00:00:00.000Z","2008-12-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2009-02-01T00:00:00.000Z","2009-03-01T00:00:00.000Z","2009-04-01T00:00:00.000Z","2009-05-01T00:00:00.000Z","2009-06-01T00:00:00.000Z","2009-07-01T00:00:00.000Z","2009-08-01T00:00:00.000Z","2009-09-01T00:00:00.000Z","2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-09-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-04-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-06-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2011-12-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2012-12-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-11-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-04-01T00:00:00.000Z","2014-05-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2014-12-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2016-12-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z"],[2,1,0,0,0,0,0,0,1,1,7,11,10,3,4,4,1,2,3,20,53,70,55,25,3,2,0,0,1,2,0,0,2,7,16,38,10,5,3,3,0,0,6,13,59,55,23,4,0,0,0,0,0,0,0,0,0,1,0,2,4,2,9,6,14,24,23,65,92,49,10,11,6,4,2,3,0,0,0,0,0,0,5,9,21,21,16,6,2,3,7,17,36,31,10,9,8,5,1,0,0,0,0,2,20,54,32,26,13,2,1,0,2,0,0,3,21,57,68,52,7,0,0,0,0,1,0,0],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,3,6,13,28,26,43,48,41,13,2,0,1,4,1,1,3,9,34,51,62,27,2,6,1,5,10,14,9,33,24,12,4,0,0,0,0,0,0,0,0,0,2,8,10,29,20,37,52,32,11,5,8,11,27,32,21,26,19,1,2,2,0,4,4,1,0,3,16,43,18,17,13,10,9,9,9,10,19,19,18,8,6,1,2,2,8,16,27,21,32,24,14,11,0,1,0,4,1,3,29,60,47,20,12,4,1,0,2,0,1,0,0]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<div id="htmlwidget-e21ede663de3fedc844f" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e21ede663de3fedc844f">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,43]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Hospital de Cuilapa","Hospital de Quetzaltenango"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"febril","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2008-11-01T00:00:00.000Z","2008-12-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2009-02-01T00:00:00.000Z","2009-03-01T00:00:00.000Z","2009-04-01T00:00:00.000Z","2009-06-01T00:00:00.000Z","2009-07-01T00:00:00.000Z","2009-08-01T00:00:00.000Z","2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-09-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-04-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z"],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,null,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,2,1,3,0,1,0,0,1,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[null,null,null,0,0,null,0,0,null,0,0,0,0,0,null,null,null,null,0,0,null,0,0,0,0,0,0,0,0,0,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
 </div>
-<div id="hospital-metaneumovirus-humano" class="section level3">
-<h3>Hospital: Metaneumovirus humano</h3>
+<div id="hospital-zika" class="section level3">
+<h3>Hospital: Zika</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-ae471d7138b01fec3b21" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ae471d7138b01fec3b21">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,93]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Hospital de Cuilapa","Hospital de Quetzaltenango"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"respi","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2007-11-01T00:00:00.000Z","2007-12-01T00:00:00.000Z","2008-01-01T00:00:00.000Z","2008-02-01T00:00:00.000Z","2008-03-01T00:00:00.000Z","2008-04-01T00:00:00.000Z","2008-05-01T00:00:00.000Z","2008-06-01T00:00:00.000Z","2008-07-01T00:00:00.000Z","2008-08-01T00:00:00.000Z","2008-09-01T00:00:00.000Z","2008-10-01T00:00:00.000Z","2008-11-01T00:00:00.000Z","2008-12-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2009-02-01T00:00:00.000Z","2009-03-01T00:00:00.000Z","2009-04-01T00:00:00.000Z","2009-05-01T00:00:00.000Z","2009-06-01T00:00:00.000Z","2009-07-01T00:00:00.000Z","2009-08-01T00:00:00.000Z","2009-09-01T00:00:00.000Z","2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-09-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-04-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-06-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2011-12-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2012-12-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-11-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-04-01T00:00:00.000Z","2014-05-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2014-12-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2016-12-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z"],[0,1,0,0,2,0,1,2,2,7,10,12,5,1,1,0,0,0,0,0,0,0,1,0,0,3,2,3,3,15,12,17,14,7,2,0,0,0,0,0,0,0,0,0,6,0,2,6,1,1,0,0,0,0,0,1,10,8,11,12,0,1,0,0,0,0,0,0,0,0,1,1,1,0,4,0,4,5,2,6,7,5,4,0,5,1,0,0,0,0,1,6,3,0,1,5,4,3,1,0,0,0,3,0,3,6,7,12,5,0,0,0,0,0,0,0,6,5,13,9,8,4,0,0,2,0,0,0],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,0,0,0,0,0,3,4,5,6,2,7,4,16,12,13,18,13,12,12,3,1,0,0,0,0,0,0,0,0,3,4,13,10,1,0,0,0,0,0,9,13,6,5,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,2,9,16,15,7,11,2,4,0,1,2,1,1,0,1,0,1,6,6,11,4,16,10,0,1,0,1,0,2,1,4,1,8,8,3,0,2,1,1,0,2,6,14,7,8,3,0,0,0,0,0,0,0,0]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
-</div>
-<div id="hospital-neumococo" class="section level3">
-<h3>Hospital: Neumococo</h3>
-<div class="knitr-options" data-fig-width="576" data-fig-height="460">
-
-</div>
-<div id="htmlwidget-793c9f22f523a3951e29" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
-<script type="application/json" data-for="htmlwidget-793c9f22f523a3951e29">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,93]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Hospital de Cuilapa","Hospital de Quetzaltenango"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"respi","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2007-11-01T00:00:00.000Z","2007-12-01T00:00:00.000Z","2008-01-01T00:00:00.000Z","2008-02-01T00:00:00.000Z","2008-03-01T00:00:00.000Z","2008-04-01T00:00:00.000Z","2008-05-01T00:00:00.000Z","2008-06-01T00:00:00.000Z","2008-07-01T00:00:00.000Z","2008-08-01T00:00:00.000Z","2008-09-01T00:00:00.000Z","2008-10-01T00:00:00.000Z","2008-11-01T00:00:00.000Z","2008-12-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2009-02-01T00:00:00.000Z","2009-03-01T00:00:00.000Z","2009-04-01T00:00:00.000Z","2009-05-01T00:00:00.000Z","2009-06-01T00:00:00.000Z","2009-07-01T00:00:00.000Z","2009-08-01T00:00:00.000Z","2009-09-01T00:00:00.000Z","2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-09-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-04-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-06-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2011-12-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2012-12-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-11-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-04-01T00:00:00.000Z","2014-05-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2014-12-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2016-12-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z"],[0,2,1,1,1,1,1,0,1,0,0,3,2,1,2,3,0,1,3,1,6,1,1,1,0,0,2,2,0,1,1,1,0,3,2,2,3,0,2,1,1,2,4,2,3,2,0,1,0,0,0,0,0,2,1,3,2,0,2,0,2,1,1,2,1,1,0,3,1,3,1,3,0,2,0,0,2,1,1,0,0,2,0,1,1,0,1,0,0,1,0,0,1,0,1,0,0,0,1,5,0,4,2,3,0,2,3,0,1,0,4,1,3,3,0,1,0,0,0,0,0,0,0,0,0,0,0,0],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,2,1,3,2,5,8,1,0,3,2,4,2,2,3,2,5,2,1,4,1,6,3,11,7,3,1,5,0,0,0,0,0,0,0,2,0,4,1,0,0,0,0,0,1,2,2,0,1,0,1,1,2,1,1,4,2,1,0,2,0,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,0,0,1,0,0,0,0,1,1,2,2,1,0,0,0,0,0,1,1,1,0,2,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<div id="htmlwidget-157b911eabfbfb9b1e2b" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-157b911eabfbfb9b1e2b">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,43]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Hospital de Cuilapa","Hospital de Quetzaltenango"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"febril","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2008-11-01T00:00:00.000Z","2008-12-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2009-02-01T00:00:00.000Z","2009-03-01T00:00:00.000Z","2009-04-01T00:00:00.000Z","2009-06-01T00:00:00.000Z","2009-07-01T00:00:00.000Z","2009-08-01T00:00:00.000Z","2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-09-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-04-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z"],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,null,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,1,0,4,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[null,null,null,0,0,null,0,0,null,0,0,0,0,0,null,null,null,null,0,0,null,0,0,0,0,0,0,0,0,0,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="centro-de-salud" class="section level2">
 <h2>Centro de salud</h2>
-<div id="centro-de-salud-influenza-a-y-b" class="section level3">
-<h3>Centro de salud: Influenza A y B</h3>
+<div id="centro-de-salud-dengue" class="section level3">
+<h3>Centro de salud: Dengue</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-591267cd4c290b5e6493" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
-<script type="application/json" data-for="htmlwidget-591267cd4c290b5e6493">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,93]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Centro de Salud NSR","CS-SM"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"respi","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2007-11-01T00:00:00.000Z","2007-12-01T00:00:00.000Z","2008-01-01T00:00:00.000Z","2008-02-01T00:00:00.000Z","2008-03-01T00:00:00.000Z","2008-04-01T00:00:00.000Z","2008-05-01T00:00:00.000Z","2008-06-01T00:00:00.000Z","2008-07-01T00:00:00.000Z","2008-08-01T00:00:00.000Z","2008-09-01T00:00:00.000Z","2008-10-01T00:00:00.000Z","2008-11-01T00:00:00.000Z","2008-12-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2009-02-01T00:00:00.000Z","2009-03-01T00:00:00.000Z","2009-04-01T00:00:00.000Z","2009-05-01T00:00:00.000Z","2009-06-01T00:00:00.000Z","2009-07-01T00:00:00.000Z","2009-08-01T00:00:00.000Z","2009-09-01T00:00:00.000Z","2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-09-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-04-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-06-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2011-12-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2012-12-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-11-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-04-01T00:00:00.000Z","2014-05-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2014-12-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2016-12-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z"],[1,0,0,1,1,1,2,21,19,11,9,6,0,0,0,0,3,10,5,9,13,60,12,4,3,1,1,0,2,9,10,8,6,17,32,16,2,1,1,1,4,4,7,2,5,3,10,5,0,1,0,2,7,1,6,6,1,1,1,0,1,0,4,11,5,7,5,5,8,10,9,7,2,1,0,0,0,0,1,0,3,3,5,13,21,0,7,5,1,2,2,4,3,0,0,0,0,0,4,7,16,7,0,0,0,2,0,1,3,2,7,4,18,7,0,7,9,6,8,14,6,1,3,3,3,8,1,0],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,2,0,4,3,4,6,0,1,3,10,5,0,0]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<div id="htmlwidget-6eb0c8241832f552512f" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6eb0c8241832f552512f">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,43]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Centro de Salud NSR"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"febril","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-06-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2011-12-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2012-12-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-11-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-04-01T00:00:00.000Z","2014-05-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2014-12-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z"],[0,0,0,1,0,0,1,11,9,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,1,5,3,1,2,1,2,0,0,0,0,0,0,0,0,0,1,2,0,2,0,0,2,0,0,1,0,0,2,0,1,0,0,1,3,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
 </div>
-<div id="centro-de-salud-virus-sincitial-respiratorio" class="section level3">
-<h3>Centro de salud: Virus sincitial respiratorio</h3>
+<div id="centro-de-salud-chikungunya" class="section level3">
+<h3>Centro de salud: Chikungunya</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-4b89bea991afcb7d5fd7" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4b89bea991afcb7d5fd7">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,93]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Centro de Salud NSR","CS-SM"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"respi","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2007-11-01T00:00:00.000Z","2007-12-01T00:00:00.000Z","2008-01-01T00:00:00.000Z","2008-02-01T00:00:00.000Z","2008-03-01T00:00:00.000Z","2008-04-01T00:00:00.000Z","2008-05-01T00:00:00.000Z","2008-06-01T00:00:00.000Z","2008-07-01T00:00:00.000Z","2008-08-01T00:00:00.000Z","2008-09-01T00:00:00.000Z","2008-10-01T00:00:00.000Z","2008-11-01T00:00:00.000Z","2008-12-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2009-02-01T00:00:00.000Z","2009-03-01T00:00:00.000Z","2009-04-01T00:00:00.000Z","2009-05-01T00:00:00.000Z","2009-06-01T00:00:00.000Z","2009-07-01T00:00:00.000Z","2009-08-01T00:00:00.000Z","2009-09-01T00:00:00.000Z","2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-09-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-04-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-06-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2011-12-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2012-12-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-11-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-04-01T00:00:00.000Z","2014-05-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2014-12-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2016-12-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z"],[0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,2,0,2,5,23,17,4,1,1,1,0,0,1,0,0,0,0,3,4,9,7,1,2,0,1,1,0,1,10,11,11,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,2,6,10,8,6,8,10,11,1,0,3,3,0,0,0,0,0,0,0,0,0,1,8,3,1,1,1,0,3,6,9,6,1,0,0,0,0,0,0,0,0,0,1,8,2,6,0,0,0,0,1,0,0,0,2,8,14,8,2,0,0,0,0,0,0,0],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,0,4,7,0,0,1,0,0,1,0,0,0,0]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<div id="htmlwidget-75d5a3524bc698ebe0f3" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-75d5a3524bc698ebe0f3">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,43]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Centro de Salud NSR"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"febril","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-06-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2011-12-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2012-12-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-11-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-04-01T00:00:00.000Z","2014-05-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2014-12-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z"],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,11,8,9,3,8,13,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
 </div>
-<div id="centro-de-salud-metaneumovirus-humano" class="section level3">
-<h3>Centro de salud: Metaneumovirus humano</h3>
+<div id="centro-de-salud-zika" class="section level3">
+<h3>Centro de salud: Zika</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div id="htmlwidget-58c1d68a724224fe11bb" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
-<script type="application/json" data-for="htmlwidget-58c1d68a724224fe11bb">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,93]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Centro de Salud NSR","CS-SM"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"respi","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2007-11-01T00:00:00.000Z","2007-12-01T00:00:00.000Z","2008-01-01T00:00:00.000Z","2008-02-01T00:00:00.000Z","2008-03-01T00:00:00.000Z","2008-04-01T00:00:00.000Z","2008-05-01T00:00:00.000Z","2008-06-01T00:00:00.000Z","2008-07-01T00:00:00.000Z","2008-08-01T00:00:00.000Z","2008-09-01T00:00:00.000Z","2008-10-01T00:00:00.000Z","2008-11-01T00:00:00.000Z","2008-12-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2009-02-01T00:00:00.000Z","2009-03-01T00:00:00.000Z","2009-04-01T00:00:00.000Z","2009-05-01T00:00:00.000Z","2009-06-01T00:00:00.000Z","2009-07-01T00:00:00.000Z","2009-08-01T00:00:00.000Z","2009-09-01T00:00:00.000Z","2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-09-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-04-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-06-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2011-12-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2012-12-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-11-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-04-01T00:00:00.000Z","2014-05-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2014-12-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2016-12-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z"],[1,1,0,1,0,0,0,2,6,2,5,4,2,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,3,2,10,4,2,5,2,0,0,0,0,0,0,0,0,0,2,3,5,2,1,0,0,0,0,0,1,0,2,0,5,6,1,2,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,0,1,5,3,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,6,1,0,0,0,0,0,0,0,0,1,3,5,0,0,0,0,0,0,0,0],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,0,0,3,2,1,0,0,0,0,0,0,0,0]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
-</div>
-<div id="centro-de-salud-no-se-realiza-pruebas-de-neumococo-en-los-centros-de-salud." class="section level3">
-<h3>Centro de salud: No se realiza pruebas de neumococo en los centros de salud.</h3>
-<div class="knitr-options" data-fig-width="576" data-fig-height="460">
-
-</div>
-<div id="htmlwidget-aff293df422405c89e94" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
-<script type="application/json" data-for="htmlwidget-aff293df422405c89e94">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,93]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Centro de Salud NSR","CS-SM"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"respi","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2007-11-01T00:00:00.000Z","2007-12-01T00:00:00.000Z","2008-01-01T00:00:00.000Z","2008-02-01T00:00:00.000Z","2008-03-01T00:00:00.000Z","2008-04-01T00:00:00.000Z","2008-05-01T00:00:00.000Z","2008-06-01T00:00:00.000Z","2008-07-01T00:00:00.000Z","2008-08-01T00:00:00.000Z","2008-09-01T00:00:00.000Z","2008-10-01T00:00:00.000Z","2008-11-01T00:00:00.000Z","2008-12-01T00:00:00.000Z","2009-01-01T00:00:00.000Z","2009-02-01T00:00:00.000Z","2009-03-01T00:00:00.000Z","2009-04-01T00:00:00.000Z","2009-05-01T00:00:00.000Z","2009-06-01T00:00:00.000Z","2009-07-01T00:00:00.000Z","2009-08-01T00:00:00.000Z","2009-09-01T00:00:00.000Z","2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-09-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-04-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-06-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2011-12-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2012-12-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-11-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-04-01T00:00:00.000Z","2014-05-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2014-12-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2016-12-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-03-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-05-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-11-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-01-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-03-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z"],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
-<!-- End of the respi report page -->
+<div id="htmlwidget-daea84242346cf396df0" style="width:576px;height:200px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-daea84242346cf396df0">{"x":{"attrs":{"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true,"valueRange":[0,43]}},"xlabel":"Mes","ylabel":"Número de casos","labels":["month","Centro de Salud NSR"],"retainDateWindow":false,"stackedGraph":false,"fillGraph":true,"fillAlpha":0.4,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false,"legend":"onmouseover","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true,"showRangeSelector":true,"rangeSelectorHeight":15,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"monthly","group":"febril","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2009-10-01T00:00:00.000Z","2009-11-01T00:00:00.000Z","2009-12-01T00:00:00.000Z","2010-01-01T00:00:00.000Z","2010-02-01T00:00:00.000Z","2010-03-01T00:00:00.000Z","2010-04-01T00:00:00.000Z","2010-05-01T00:00:00.000Z","2010-06-01T00:00:00.000Z","2010-07-01T00:00:00.000Z","2010-08-01T00:00:00.000Z","2010-10-01T00:00:00.000Z","2010-11-01T00:00:00.000Z","2010-12-01T00:00:00.000Z","2011-01-01T00:00:00.000Z","2011-02-01T00:00:00.000Z","2011-03-01T00:00:00.000Z","2011-05-01T00:00:00.000Z","2011-06-01T00:00:00.000Z","2011-07-01T00:00:00.000Z","2011-08-01T00:00:00.000Z","2011-09-01T00:00:00.000Z","2011-10-01T00:00:00.000Z","2011-11-01T00:00:00.000Z","2011-12-01T00:00:00.000Z","2012-01-01T00:00:00.000Z","2012-02-01T00:00:00.000Z","2012-03-01T00:00:00.000Z","2012-04-01T00:00:00.000Z","2012-05-01T00:00:00.000Z","2012-06-01T00:00:00.000Z","2012-07-01T00:00:00.000Z","2012-08-01T00:00:00.000Z","2012-09-01T00:00:00.000Z","2012-10-01T00:00:00.000Z","2012-11-01T00:00:00.000Z","2012-12-01T00:00:00.000Z","2013-01-01T00:00:00.000Z","2013-02-01T00:00:00.000Z","2013-03-01T00:00:00.000Z","2013-04-01T00:00:00.000Z","2013-05-01T00:00:00.000Z","2013-06-01T00:00:00.000Z","2013-07-01T00:00:00.000Z","2013-08-01T00:00:00.000Z","2013-09-01T00:00:00.000Z","2013-10-01T00:00:00.000Z","2013-11-01T00:00:00.000Z","2013-12-01T00:00:00.000Z","2014-01-01T00:00:00.000Z","2014-02-01T00:00:00.000Z","2014-03-01T00:00:00.000Z","2014-04-01T00:00:00.000Z","2014-05-01T00:00:00.000Z","2014-06-01T00:00:00.000Z","2014-07-01T00:00:00.000Z","2014-08-01T00:00:00.000Z","2014-09-01T00:00:00.000Z","2014-10-01T00:00:00.000Z","2014-11-01T00:00:00.000Z","2014-12-01T00:00:00.000Z","2015-01-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-03-01T00:00:00.000Z","2015-04-01T00:00:00.000Z","2015-05-01T00:00:00.000Z","2015-06-01T00:00:00.000Z","2015-07-01T00:00:00.000Z","2015-08-01T00:00:00.000Z","2015-09-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-11-01T00:00:00.000Z","2015-12-01T00:00:00.000Z","2016-01-01T00:00:00.000Z","2016-02-01T00:00:00.000Z","2016-03-01T00:00:00.000Z","2016-04-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-06-01T00:00:00.000Z","2016-07-01T00:00:00.000Z","2016-09-01T00:00:00.000Z","2016-10-01T00:00:00.000Z","2016-11-01T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-02-01T00:00:00.000Z","2017-04-01T00:00:00.000Z","2017-06-01T00:00:00.000Z","2017-07-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-09-01T00:00:00.000Z","2017-10-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-05-01T00:00:00.000Z","2018-06-01T00:00:00.000Z"],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,4,4,4,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],"fixedtz":false,"tzone":"UTC"},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<!-- End of the febrile report page -->
 </div>
 </div>
 </div>
